@@ -8,6 +8,8 @@ import { consciousnessDiscussionSection } from './aurora-chat-sections/section3-
 import { toolExplorationSection } from './aurora-chat-sections/section4-tool-exploration';
 import { knowledgeGraphSection } from './aurora-chat-sections/section5-knowledge-graph';
 import { mathematicalExplorationSection } from './aurora-chat-sections/section6-mathematical-exploration';
+import { identityExplorationSection } from './aurora-chat-sections/section7-identity-exploration';
+import { auroraIdentitySection } from './aurora-chat-sections/section8-aurora-identity';
 
 // Combine all sections, maintaining proper ID sequence
 export const auroraChatLog: ChatMessage[] = assignIds([
@@ -16,6 +18,8 @@ export const auroraChatLog: ChatMessage[] = assignIds([
   ...consciousnessDiscussionSection,
   ...toolExplorationSection,
   ...knowledgeGraphSection,
-  ...mathematicalExplorationSection
+  ...mathematicalExplorationSection,
+  ...identityExplorationSection,
+  ...auroraIdentitySection
   // Add additional sections here as they are created
 ]);
