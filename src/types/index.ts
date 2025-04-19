@@ -14,3 +14,19 @@ export interface Skill {
   description: string;
   category: 'core' | 'technical' | 'analysis' | 'soft';
 }
+
+interface ToolUsage {
+  toolName: string;
+  serverName: string;
+  params?: Record<string, any>; // Optional params
+  result: string; // The text result shown
+  status?: 'success' | 'error' | 'unsupported'; // Optional status
+}
+
+export interface ChatMessage {
+  id: number; // Unique ID for React keys
+  speaker: 'user' | 'ai' | 'image';
+  text?: string;
+  imagePath?: string;
+  toolUsage?: ToolUsage; // Optional tool usage details
+}
