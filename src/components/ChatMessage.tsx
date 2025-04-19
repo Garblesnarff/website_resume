@@ -8,6 +8,7 @@ interface ChatMessageProps {
 const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
   const isUser = message.speaker === 'user';
   const isImage = message.speaker === 'image';
+  const isCode = message.speaker === 'code';
 
   if (isImage && message.imagePath) {
     return (
@@ -17,6 +18,16 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
           alt="Generated visual representation" 
           className="rounded-lg shadow-lg max-w-md max-h-96 object-contain"
         />
+      </div>
+    );
+  }
+
+  if (isCode && message.codeBlock) {
+    return (
+      <div className="w-full my-4 animate-fade-in">
+        <div className="bg-gray-800 text-white p-4 rounded-lg shadow-lg overflow-auto max-h-96">
+          <pre className="whitespace-pre-wrap break-words text-sm font-mono">{message.codeBlock}</pre>
+        </div>
       </div>
     );
   }

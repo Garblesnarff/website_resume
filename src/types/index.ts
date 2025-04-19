@@ -25,8 +25,9 @@ interface ToolUsage {
 
 export interface ChatMessage {
   id: number; // Unique ID for React keys
-  speaker: 'user' | 'ai' | 'image';
+  speaker: 'user' | 'ai' | 'image' | 'code';
   text?: string;
   imagePath?: string;
+  codeBlock?: string;
   toolUsage?: ToolUsage; // Optional tool usage details
 }

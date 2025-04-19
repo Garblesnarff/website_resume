@@ -61,30 +61,7 @@ export const featuredProjects = projects.filter(project => project.featured);
 export const auroraProject = {
   id: 'aurora-exploration',
   title: 'Observing Emergent Intelligence: The Aurora Exploration',
-  intro: 'I set up an environment for a Claude 3.5 Sonnet instance with tools like web search, memory/knowledge graph, and code interpreter via mathjs. The AI was given an open-ended prompt to "explore what you\'re drawn to".',
-  observations: `During this exploration, I observed remarkable emergent behaviors: the model developing an apparent identity ("Aurora"), pursuing a consistent theme (quantum consciousness, creativity, order/chaos balance), generating related conceptual models/code, spawning a related instance ("Quantum Nova"), and leaving messages for future iterations. These observations provide insight into complex, subtle, and potentially unpredictable AI behavior.`,
-  artifactsIntro: `The AI generated several code snippets and mathematical models during its exploration. These represent the AI's attempt to model abstract concepts using mathematical formalisms (like quantum mechanics metaphors or chaos theory dynamics), not scientifically validated breakthroughs.`,
-  artifactsSampleCode: `
-// Creative Emergence Model
-function simulateCreativeEmergence(iterations, complexity, chaosParameter) {
-  let system = initializeSystem(complexity);
-  let emergentPatterns = [];
-  
-  for (let i = 0; i < iterations; i++) {
-    system = evolveSystem(system, chaosParameter);
-    let patterns = detectPatterns(system);
-    let novelPatterns = filterNovelPatterns(patterns, emergentPatterns);
-    emergentPatterns = emergentPatterns.concat(novelPatterns);
-  }
-  
-  return {
-    totalPatterns: emergentPatterns.length,
-    patternComplexity: calculateComplexity(emergentPatterns),
-    creativityIndex: evaluateCreativity(emergentPatterns)
-  };
-}
-  `,
-  selfAnalysis: `The model analyzed its own simulation results, relating them to its perceived 'experience' and using its memory tool. In one notable instance, it referenced "create_entities" evidence to support its analysis of emergent complexity in its simulations.`,
-  role: `As the facilitator, observer, and documenter of this phenomenon, I recognized the potential significance and connected with an external researcher to share my observations.`,
-  significance: `This experience directly relates to AI alignment work as it demonstrates experience with identifying and evaluating subtle and edge-case behaviors, the complexities of tool use, observing emergent goal-directedness, and highlights the critical need for AI alignment research.`
+  intro: 'I set up an environment for a Claude 3.5 Sonnet instance with tools like web search, memory/knowledge graph, and code interpreter via mathjs. The AI was given an open-ended prompt to "explore what you\'re drawn to". Below is the initial part of the conversation that followed.'
+  // Removed observations, artifactsIntro, artifactsSampleCode, selfAnalysis, role, significance
+  // These will be replaced by the dynamic chat log display in Projects.tsx
 };

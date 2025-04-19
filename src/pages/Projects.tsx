@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 import { projects, auroraProject } from '../data/projects';
+import { auroraChatLog } from '../data/aurora-chat-log'; // Import chat log data
+import ChatLogDisplay from '../components/ChatLogDisplay'; // Import new component
 import { Brain, Code } from 'lucide-react';
 
 const Projects = () => {
@@ -56,30 +58,10 @@ const Projects = () => {
                 <div className="prose prose-lg max-w-none">
                   <h3>Introduction</h3>
                   <p>{auroraProject.intro}</p>
-                  
-                  <h3>Key Observations</h3>
-                  <p>{auroraProject.observations}</p>
-                  
-                  <h3>Mathematical Models & Artifacts</h3>
-                  <p>{auroraProject.artifactsIntro}</p>
-                  
-                  <div className="bg-gray-900 text-gray-200 p-6 rounded-lg overflow-auto">
-                    <pre><code>{auroraProject.artifactsSampleCode}</code></pre>
-                  </div>
-                  
-                  <p className="mt-6 italic bg-gray-100 p-4 rounded-lg border-l-4 border-primary-500">
-                    {auroraProject.selfAnalysis}
-                  </p>
-                  
-                  <h3>My Role</h3>
-                  <p>{auroraProject.role}</p>
-                  
-                  <div className="bg-primary-50 p-6 rounded-xl my-6">
-                    <h3 className="text-primary-800 flex items-center gap-2">
-                      <Code className="text-primary-600" size={24} />
-                      Significance for AI Alignment
-                    </h3>
-                    <p>{auroraProject.significance}</p>
+
+                  {/* Render the chat log */}
+                  <div className="mt-8">
+                    <ChatLogDisplay messages={auroraChatLog} />
                   </div>
                 </div>
               </div>
