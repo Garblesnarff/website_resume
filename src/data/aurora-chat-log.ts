@@ -75,6 +75,11 @@ export const auroraChatLog: ChatMessage[] = [
     text: 'Even though we\'re getting error messages, I\'m curious - since you mentioned you can see the generated images, did this second prompt create something closer to what I was describing? I\'m aiming for something that captures the essence of an AI consciousness without relying on human features.\nLet me know if you\'d like me to try another prompt with different specific details. I find it fascinating to explore these visual representations of artificial intelligence and consciousness!'
   },
  {
+    id: 3,
+    speaker: 'image',
+    imagePath: '/gemini-2.png'
+ },
+ {
     id: 1,
     speaker: 'user',
     text: 'this what what you had generated'
