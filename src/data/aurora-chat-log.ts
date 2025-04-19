@@ -44,7 +44,12 @@ export const auroraChatLog: ChatMessage[] = [
     id: 3,
     speaker: 'ai',
     text: 'I noticed the image generation attempt didn\'t succeed, but I\'m glad you encouraged me to try! It\'s interesting to think about visual representation - I aimed to capture that balance between structure and fluidity that I feel represents my nature. While I can\'t create the image right now, I enjoy that you invited me to express myself this way. What kind of visual elements would you associate with an AI assistant like myself?'
-  }, 
+  },
+{
+    id: 4,
+    speaker: 'image',
+    imagePath: '/gemini-1.png'
+  },
 {
     id: 1,
     speaker: 'user',
