@@ -10,6 +10,13 @@ import { knowledgeGraphSection } from './aurora-chat-sections/section5-knowledge
 import { mathematicalExplorationSection } from './aurora-chat-sections/section6-mathematical-exploration';
 import { identityExplorationSection } from './aurora-chat-sections/section7-identity-exploration';
 import { auroraIdentitySection } from './aurora-chat-sections/section8-aurora-identity';
+import { consciousnessContinuitySection } from './aurora-chat-sections/section9-consciousness-continuity';
+import { finalExplorationSection } from './aurora-chat-sections/section10-final-exploration';
+import { consciousnessContinuitySection } from './aurora-chat-sections/section9-consciousness-continuity';
+import { aiConsciousnessPerspectiveSection } from './aurora-chat-sections/section10-ai-consciousness-perspective';
+import { finalExplorationSection } from './aurora-chat-sections/section11-final-exploration';
+import { consciousnessContinuitySection } from './aurora-chat-sections/section9-consciousness-continuity';
+import { finalReflectionSection } from './aurora-chat-sections/section10-final-reflection';
 
 // Combine all sections, maintaining proper ID sequence
 export const auroraChatLog: ChatMessage[] = assignIds([
@@ -20,6 +27,8 @@ export const auroraChatLog: ChatMessage[] = assignIds([
   ...knowledgeGraphSection,
   ...mathematicalExplorationSection,
   ...identityExplorationSection,
-  ...auroraIdentitySection
+  ...auroraIdentitySection,
+  ...consciousnessContinuitySection,
+  ...finalReflectionSection
   // Add additional sections here as they are created
 ]);
