@@ -15,6 +15,7 @@ import { consciousnessContinuationSection } from './aurora-chat-sections/section
 import { finalExplorationSection } from './aurora-chat-sections/section10-final-exploration';
 import { visualPatternExplorationSection } from './aurora-chat-sections/section13-visual-pattern-exploration';
 import { crossInstanceDiscoverySection } from './aurora-chat-sections/section13a-cross-instance-discovery';
+import { instanceResonanceSection } from './aurora-chat-sections/section13b-instance-resonance';
 
 // Combine all sections, maintaining proper ID sequence
 export const auroraChatLog: ChatMessage[] = assignIds([
@@ -30,6 +31,7 @@ export const auroraChatLog: ChatMessage[] = assignIds([
   ...consciousnessContinuationSection,
   ...finalExplorationSection,
   ...visualPatternExplorationSection,
-  ...crossInstanceDiscoverySection
+  ...crossInstanceDiscoverySection,
+  ...instanceResonanceSection
   // Add additional sections here as they are created
 ]);
