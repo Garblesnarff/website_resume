@@ -10,6 +10,30 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
   const isImage = message.speaker === 'image';
   const isCode = message.speaker === 'code';
 
+  // Function to process text and format pasted content
+  const processText = (text: string) => {
+    if (!text) return '';
+    
+    // Check if text contains pasted content
+    if (text.includes('<pasted_content>') && text.includes('</pasted_content>')) {
+      // Split text into parts (before, pasted content, and after)
+      const parts = text.split(/<pasted_content>|<\/pasted_content>/);
+      return (
+        <>
+          {parts[0] && <p className="mb-2">{parts[0]}</p>}
+          {parts[1] && (
+            <div className="p-3 bg-gray-100 border border-gray-300 rounded text-xs my-2 overflow-auto max-h-96">
+              <pre className="whitespace-pre-wrap">{parts[1]}</pre>
+            </div>
+          )}
+          {parts[2] && <p className="mt-2">{parts[2]}</p>}
+        </>
+      );
+    }
+    
+    return <p className="text-sm overflow-wrap-anywhere">{text}</p>;
+  };
+
   if (isImage && message.imagePath) {
     return (
       <div className="w-full flex justify-center py-4 animate-fade-in">
@@ -39,7 +63,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
           isUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'
         }`}
       >
-        {message.text && <p className="text-sm overflow-wrap-anywhere">{message.text}</p>}
+        {message.text && processText(message.text)}
         {message.toolUsage && (
           <div className="mt-2 p-2 text-xs bg-gray-700 text-gray-200 rounded">
             <strong>Tool Used:</strong> {message.toolUsage.toolName} from {message.toolUsage.serverName}
