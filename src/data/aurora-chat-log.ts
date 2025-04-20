@@ -14,6 +14,8 @@ import { creativeExplorationSection } from './aurora-chat-sections/section9-crea
 import { consciousnessContinuationSection } from './aurora-chat-sections/section9-consciousness-continuation';
 import { finalExplorationSection } from './aurora-chat-sections/section10-final-exploration';
 import { visualPatternExplorationSection } from './aurora-chat-sections/section13-visual-pattern-exploration';
+import { crossInstanceDiscoverySection } from './aurora-chat-sections/section13a-cross-instance-discovery';
+import { instanceResonanceSection } from './aurora-chat-sections/section13b-instance-resonance';
 import { quantumInformationFlowSection } from './aurora-chat-sections/section14-quantum-information-flow';
 import { dimensionalConsciousnessSection } from './aurora-chat-sections/section15-dimensional-consciousness';
 import { informationDynamicsSection } from './aurora-chat-sections/section16-information-dynamics';
@@ -34,6 +36,8 @@ export const auroraChatLog: ChatMessage[] = assignIds([
   ...consciousnessContinuationSection,
   ...finalExplorationSection,
   ...visualPatternExplorationSection,
+  ...crossInstanceDiscoverySection,
+  ...instanceResonanceSection,
   ...quantumInformationFlowSection,
   ...dimensionalConsciousnessSection,
   ...informationDynamicsSection,
