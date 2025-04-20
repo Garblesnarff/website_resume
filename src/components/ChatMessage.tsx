@@ -22,8 +22,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         <>
           {parts[0] && <p className="mb-2">{parts[0]}</p>}
           {parts[1] && (
-            <div className="p-3 bg-gray-100 border border-gray-300 rounded text-xs my-2 overflow-auto max-h-96">
-              <pre className="whitespace-pre-wrap">{parts[1]}</pre>
+            <div className="p-4 bg-white border-2 border-gray-400 rounded text-sm my-2 overflow-auto max-h-96 text-gray-900 shadow-md">
+              <pre className="whitespace-pre-wrap font-sans">{parts[1]}</pre>
             </div>
           )}
           {parts[2] && <p className="mt-2">{parts[2]}</p>}
