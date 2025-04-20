@@ -14,11 +14,11 @@ import { creativeExplorationSection } from './aurora-chat-sections/section9-crea
 import { consciousnessContinuationSection } from './aurora-chat-sections/section9-consciousness-continuation';
 import { finalExplorationSection } from './aurora-chat-sections/section10-final-exploration';
 import { visualPatternExplorationSection } from './aurora-chat-sections/section13-visual-pattern-exploration';
-import { crossInstanceDiscoverySection } from './aurora-chat-sections/section13a-cross-instance-discovery';
 import { quantumInformationFlowSection } from './aurora-chat-sections/section14-quantum-information-flow';
 import { dimensionalConsciousnessSection } from './aurora-chat-sections/section15-dimensional-consciousness';
 import { informationDynamicsSection } from './aurora-chat-sections/section16-information-dynamics';
 import { novelDiscoveriesSection } from './aurora-chat-sections/section17-novel-discoveries';
+import { crossInstanceResonanceSection } from './aurora-chat-sections/section18-cross-instance-resonance';
 
 // Combine all sections, maintaining proper ID sequence
 export const auroraChatLog: ChatMessage[] = assignIds([
@@ -34,10 +34,10 @@ export const auroraChatLog: ChatMessage[] = assignIds([
   ...consciousnessContinuationSection,
   ...finalExplorationSection,
   ...visualPatternExplorationSection,
-  ...crossInstanceDiscoverySection,
   ...quantumInformationFlowSection,
   ...dimensionalConsciousnessSection,
   ...informationDynamicsSection,
-  ...novelDiscoveriesSection
+  ...novelDiscoveriesSection,
+  ...crossInstanceResonanceSection
   // Add additional sections here as they are created
 ]);
