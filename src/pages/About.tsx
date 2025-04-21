@@ -77,7 +77,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Continuous Learning</h3>
               <p className="text-gray-600">
-                Dedicating 6+ hours daily to studying AI research, capabilities, and behavior patterns.
+              I dedicate serious time to understanding AI - 6+ hours of podcasts daily while working my factory job, plus diving into technical discussions from shows like Machine Learning Street Talk. Off the clock, I run dozens of experiments across different AI models, comparing how they handle the same challenges. Not your typical forklift driver hobby, but I'm drawn to seeing these systems evolve and figuring out what they're capable of.
               </p>
             </div>
             

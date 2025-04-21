@@ -76,7 +76,7 @@ export const skills: Skill[] = [
   {
     id: 'learning',
     name: 'Self-Directed Learning & Continuous Engagement with AI Research',
-    description: 'Staying current with AI developments and independently expanding knowledge.',
+    description: "I dedicate serious time to understanding AI - 6+ hours of podcasts daily while working my factory job, plus diving into technical discussions from shows like Machine Learning Street Talk. Off the clock, I have dozens of experiments across different AI models, comparing how they handle the same challenges. Not your typical forklift driver hobby, but I'm drawn to seeing these systems evolve and figuring out what they're capable of.",
     category: 'soft'
   },
   {
