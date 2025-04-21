@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 interface ProjectCardProps {
   project: Project;
   compact?: boolean;
-  variant?: 'default' | 'compact' | 'tibetan'; // Renamed variant to 'tibetan'
+  variant?: 'default' | 'compact' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper'; // Added 'recipe-scraper' variant
 }
 
 const ProjectCard = ({ project, compact = false, variant = 'default' }: ProjectCardProps) => {
@@ -31,6 +31,97 @@ const ProjectCard = ({ project, compact = false, variant = 'default' }: ProjectC
               <span
                 key={index}
                 className="bg-tibetan-maroon/80 text-tibetan-gold/90 px-3 py-1 rounded-full text-sm font-sans group-hover:bg-tibetan-maroon transition-colors duration-300"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  // Story Automation variant logic
+  if (variant === 'story-automation') {
+    return (
+      <Link
+        to={`/projects/${project.id}`}
+        id={project.id}
+        // Apply NEW Story Automation theme: purple gradient bg, subtle border/shadow, rounded, transitions, hover scale
+        className="card h-full flex flex-col animate-slideUp bg-gradient-to-br from-storyAutomation-purple-light to-storyAutomation-purple-dark border border-storyAutomation-purple-light/50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02]"
+      >
+        <div className="p-5 flex-1"> {/* Using p-5 (~20px) */}
+          {/* Title: Light text, Inter font */}
+          <h3 className="text-lg font-sans font-medium text-storyAutomation-text-light mb-2 group-hover:text-white transition-colors duration-300">{project.title}</h3>
+          {/* Goal text: Muted light text, Inter font */}
+          <p className="text-storyAutomation-text-muted mb-4 line-clamp-3 font-sans text-sm">{project.goal}</p>
+          <div className="flex flex-wrap gap-2">
+            {/* Skill tags: Light text on slightly darker purple bg, Sans-serif font */}
+            {project.skills.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-storyAutomation-purple-dark/60 text-storyAutomation-text-light px-3 py-1 rounded-full text-xs font-sans group-hover:bg-storyAutomation-purple-dark/80 transition-colors duration-300"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  // Recipe Scraper variant logic
+  if (variant === 'recipe-scraper') {
+    return (
+      <Link
+        to={`/projects/${project.id}`}
+        id={project.id}
+        // Apply NEW Recipe Scraper theme: white bg, light border, green accents, rounded, transitions, hover scale
+        className="card h-full flex flex-col animate-slideUp bg-recipeScraper-card-bg border border-recipeScraper-border-light rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group hover:scale-[1.02]"
+      >
+        <div className="p-5 flex-1"> {/* Using p-5 */}
+          {/* Title: Dark text, primary green on hover, Sans font */}
+          <h3 className="text-lg font-sans font-medium text-recipeScraper-text-dark mb-2 group-hover:text-recipeScraper-primary-green transition-colors duration-300">{project.title}</h3>
+          {/* Goal text: Muted text, Sans font */}
+          <p className="text-recipeScraper-text-muted mb-4 line-clamp-3 font-sans text-sm">{project.goal}</p>
+          <div className="flex flex-wrap gap-2">
+            {/* Skill tags: Light green bg, dark text, Sans-serif font */}
+            {project.skills.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-recipeScraper-light-green text-recipeScraper-text-dark px-3 py-1 rounded-full text-xs font-sans group-hover:bg-recipeScraper-primary-green/30 transition-colors duration-300"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+
+  // KeyGuardian variant logic
+  if (variant === 'keyguardian') {
+    return (
+      <Link
+        to={`/projects/${project.id}`}
+        id={project.id}
+        // Apply NEW KeyGuardian theme: teal bg, subtle border/shadow, rounded, transitions, hover scale
+        className="card h-full flex flex-col animate-slideUp bg-keyguardian-teal border border-keyguardian-teal/80 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02]"
+      >
+        <div className="p-5 flex-1"> {/* Using p-5 (~20px) */}
+          {/* Title: White text, Inter font */}
+          <h3 className="text-lg font-sans font-medium text-keyguardian-light-text mb-2 group-hover:text-white transition-colors duration-300">{project.title}</h3> {/* Adjusted size/weight */}
+          {/* Goal text: Gray text, Inter font */}
+          <p className="text-keyguardian-gray-text mb-4 line-clamp-3 font-sans text-sm">{project.goal}</p> {/* Adjusted size */}
+          <div className="flex flex-wrap gap-2">
+            {/* Skill tags: Blue text/bg, Sans-serif font */}
+            {project.skills.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-keyguardian-vibrant-blue/10 text-keyguardian-vibrant-blue px-3 py-1 rounded-full text-xs font-sans group-hover:bg-keyguardian-vibrant-blue/20 transition-colors duration-300" // Adjusted size
               >
                 {skill}
               </span>

@@ -6,6 +6,12 @@ export interface Project {
   outcome: string;
   skills: string[];
   featured?: boolean;
+  links?: { // Add optional links property
+    githubTool?: string;
+    githubDatabase?: string;
+    preview?: string;
+    video?: string;
+  };
 }
 
 export interface Skill {

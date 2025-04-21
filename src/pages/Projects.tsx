@@ -36,9 +36,22 @@ const Projects = () => {
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid gap-10">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+            {projects.map((project) => {
+              // Update variant type to include 'story-automation' and 'recipe-scraper'
+              let variant: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' = 'default';
+              if (project.id === 'tibetan-translation') {
+                variant = 'tibetan';
+              } else if (project.id === 'story-automation') { // Add condition for story-automation
+                variant = 'story-automation';
+              } else if (project.id === 'recipe-scraper') { // Add condition for recipe-scraper
+                variant = 'recipe-scraper';
+              } else if (project.id === 'api-key-wallet') {
+                variant = 'story-automation';
+              } else if (project.id === 'api-key-wallet') {
+                variant = 'keyguardian';
+              }
+              return <ProjectCard key={project.id} project={project} variant={variant} />;
+            })}
           </div>
         </div>
       </section>

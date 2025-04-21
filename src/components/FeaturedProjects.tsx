@@ -15,9 +15,15 @@ const FeaturedProjects = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} compact />
-          ))}
+          {featuredProjects.map((project) => {
+            if (project.id === 'tibetan-translation') {
+              return <ProjectCard key={project.id} project={project} variant="tibetan" />;
+            } else if (project.id === 'story-automation') { // Add condition for story-automation
+              return <ProjectCard key={project.id} project={project} variant="story-automation" />;
+            } else { // Default to compact for other featured projects
+              return <ProjectCard key={project.id} project={project} compact />;
+            }
+          })}
         </div>
         
         <div className="mt-12 text-center">

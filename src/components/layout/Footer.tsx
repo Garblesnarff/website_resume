@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Brain, Github, Linkedin, Mail } from 'lucide-react';
+import { Brain, Github, Mail, X } from 'lucide-react'; // Replaced Linkedin with X
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,13 +32,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Connect</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              {/* Updated GitHub Link */}
+              <a href="https://github.com/Garblesnarff" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
-                <Linkedin className="w-6 h-6" />
+              {/* Replaced LinkedIn with X */}
+              <a href="https://x.com/PrintedPathways" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors">
+                <X className="w-6 h-6" />
               </a>
-              <a href="mailto:contact@example.com" className="text-gray-400 hover:text-primary-400 transition-colors">
+              {/* Updated Email Link */}
+              <a href="mailto:ro.jhanson@gmail.com" className="text-gray-400 hover:text-primary-400 transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>

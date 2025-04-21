@@ -40,6 +40,44 @@ export default {
           800: '#911941',
           900: '#7c1a3c',
         },
+        // Add Tibetan colors
+        tibetan: {
+          maroon: '#8B0000',
+          gold: '#FFD700',
+          brown: '#8B4513',
+        },
+        // Update KeyGuardian colors based on design doc
+        keyguardian: {
+          'dark-navy': '#1A2C34',
+          'teal': '#2A3F4A',
+          'vibrant-blue': '#007BFF',
+          'light-text': '#FFFFFF',
+          'gray-text': '#B0B0B0',
+          'key-bg': '#1C2526',
+        },
+        // Add Story Automation colors
+        storyAutomation: {
+          'purple-dark': '#4F0A59',
+          'purple-light': '#7A2F9A',
+          'text-light': '#FFFFFF', // Assuming white text
+          'text-muted': '#E0E0E0'  // Assuming a slightly dimmer text for less emphasis
+        },
+        // Add Recipe Scraper colors
+        recipeScraper: {
+          'bg-light': '#F8F9FA',
+          'card-bg': '#FFFFFF',
+          'primary-green': '#28A745',
+          'light-green': '#DCEDC8', // Using a lighter green for tags/accents
+          'text-dark': '#212529',
+          'text-muted': '#6C757D',
+          'border-light': '#DEE2E6',
+        },
+      },
+      fontFamily: { // Ensure sans and mono are present
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+        serif: ['Crimson Pro', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        tibetan: ['Noto Sans Tibetan', 'sans-serif'], // Fallback to sans-serif
+        mono: ['Fira Code', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'], // Add Monospace
       },
       typography: {
         DEFAULT: {

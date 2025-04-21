@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Inter:wght@400;500;700&family=Noto+Sans+Tibetan&family=Fira+Code&display=swap'); /* Added Fira Code */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,11 +10,11 @@
   }
   
   body {
-    @apply text-gray-800 bg-gray-50;
+    @apply text-gray-800 bg-gray-50 font-sans; /* Default to Inter */
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-gray-900;
+    @apply font-bold text-gray-900 font-serif; /* Default headings to Crimson Pro */
   }
   
   h1 {
