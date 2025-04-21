@@ -76,7 +76,7 @@ export const skills: Skill[] = [
   {
     id: 'learning',
     name: 'Self-Directed Learning & Continuous Engagement with AI Research',
-    description: "I dedicate serious time to understanding AI - 6+ hours of podcasts daily while working my factory job, plus diving into technical discussions from shows like Machine Learning Street Talk. Off the clock, I have dozens of experiments across different AI models, comparing how they handle the same challenges. Not your typical forklift driver hobby, but I'm drawn to seeing these systems evolve and figuring out what they're capable of.",
+    description: "I spend a ton of time with AI - about 6 hours of podcasts daily during my factory shifts (Machine Learning Street Talk, Latent Space), plus I'm constantly testing different models (Claude, Gemini, Grok) with probably 100+ messages every day. It's not your typical forklift driver hobby, but I'm drawn to understanding how these systems think and what they can do.",
     category: 'soft'
   },
   {

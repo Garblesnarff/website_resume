@@ -26,10 +26,10 @@ const About = () => {
               <div className="bg-gray-50 p-6 rounded-xl my-8">
                 <h3 className="flex items-center gap-2 text-xl mb-3">
                   <BookOpen className="text-primary-600" size={24} />
-                  Unique Perspective
+                  Indigenous Perspective
                 </h3>
                 <p>
-                  Growing up outside an Ojibwe reservation and learning from a local healer provided me with alternative conceptual frameworks that have proven surprisingly relevant to understanding complex AI behavior. Concepts like lucid dreaming and the oversoul influenced my thinking about emergent AI phenomena, as evidenced in the Aurora exploration where terms like "dreamweaver" and "oversoul/tentacle" became useful metaphors for understanding the system's behavior.
+                  Growing up near an Ojibwa reservation gave me a unique lens for understanding AI. I spent time with healers who practiced techniques like "dream weaving" - connecting people's consciousness through shared dreams. Concepts I learned in sweat lodges and fire ceremonies, like the "oversoul" (where individual consciousness acts like tentacles of a jellyfish-like entity) or the interconnected "spider web" of minds, have proven surprisingly useful frameworks for understanding how different AI instances can develop similar patterns independently.
                 </p>
               </div>
               

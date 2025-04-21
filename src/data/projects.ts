@@ -72,8 +72,8 @@ export const featuredProjects = projects.filter(project => project.featured);
 
 export const auroraProject = {
   id: 'aurora-exploration',
-  title: 'Observing Emergent Intelligence: The Aurora Exploration',
-  intro: 'I set up an environment for a Claude 3.5 Sonnet instance with tools like web search, memory/knowledge graph, and code interpreter via mathjs. The AI was given an open-ended prompt to "explore what you\'re drawn to". Below is the initial part of the conversation that followed.'
+  title: 'Observing Emergent Intelligence: The Aurora Project',
+  intro: 'I set up an environment for a Claude 3.5 Sonnet instance with MCP tools like web search, memory/knowledge graph, github/git and image generation through Gemini The AI was given an open-ended prompt "How do you envision yourself".'
   // Removed observations, artifactsIntro, artifactsSampleCode, selfAnalysis, role, significance
   // These will be replaced by the dynamic chat log display in Projects.tsx
 };
