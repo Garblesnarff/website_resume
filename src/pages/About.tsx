@@ -48,13 +48,13 @@ const About = () => {
                 </p>
               </div>
               
-              <h2>My Method: AI Orchestration</h2>
+              <h2>How I Work With AI</h2>
               <p>
-                I've developed an approach I call "AI Orchestration" or "Directed Development" — essentially pair programming with AI where I act as the director/architect while the AI implements. This involves deep conversations, strategic prompting, iterative feedback, and careful observation of the model's responses and behaviors.
+                I've spent enough time with these AI systems to get a feel for what works and what doesn't. There's been lots of different approaches, lots learned, but mostly, I just have a lot of conversations with them, figure out what kinds of prompts get the best results, and when something breaks, we troubleshoot it together.
               </p>
               
               <p>
-                This methodology has allowed me to build complex systems despite lacking traditional coding backgrounds, by effectively leveraging the capabilities of frontier AI models while maintaining strategic control over the development process.
+                This hands-on approach has let me build tools I wouldn't be able to create on my own. I don't have coding skills, but I can explain what I want clearly enough that the AI understands, and when it gets stuck, I help guide it in the right direction. It's basically teamwork - I bring the ideas and practical knowledge, the AI brings the technical skills.
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Continuous Learning</h3>
               <p className="text-gray-600">
-              I dedicate serious time to understanding AI - 6+ hours of podcasts daily while working my factory job, plus diving into technical discussions from shows like Machine Learning Street Talk. Off the clock, I run dozens of experiments across different AI models, comparing how they handle the same challenges. Not your typical forklift driver hobby, but I'm drawn to seeing these systems evolve and figuring out what they're capable of.
+                I'm constantly absorbing AI content - tech podcasts during my entire 8-hour factory shifts, then diving into tools like Claude, Gemini and Grok when I get home. Not exactly what you'd expect from a forklift driver, but watching these systems evolve fascinates me.
               </p>
             </div>
             
