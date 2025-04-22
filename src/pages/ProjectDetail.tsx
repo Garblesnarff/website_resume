@@ -164,6 +164,14 @@ const ProjectDetail: React.FC = () => {
               <li>Libraries and institutions maintaining collections of Tibetan literature</li>
               <li>Students learning about Tibetan Buddhist traditions and lineages</li>
             </ul>
+
+            {/* Added personal reflection paragraphs */}
+            <p className="text-lg mb-6 mt-6"> {/* Added margin top */}
+              <strong>This is the project I'm most proud of.</strong> Give the AI tool a PDF of Tibetan text, and you get back a fully translated document in English. I've translated texts over 600 pages long. It's exciting because who knows what insights could be hidden in these ancient texts that haven't been widely accessible before.
+            </p>
+            <p className={`${textClasses} mt-4`}> {/* Used textClasses and added margin top */}
+              The project also connects to my interest in storytelling, which might tie back to my Ojibwa heritage. As humans, we're fundamentally storytellers, and making these stories accessible across language barriers feels meaningful.
+            </p>
           </div>
         </div>
       )}

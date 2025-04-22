@@ -2,10 +2,10 @@ import { Skill } from '../types';
 
 export const skills: Skill[] = [
   {
-    id: 'orchestration',
-    name: 'AI Orchestration & Directed Development',
-    description: 'Ability to guide AI systems to perform complex tasks through strategic prompting, feedback, and iteration.',
-    category: 'core'
+    id: 'learning',
+    name: 'Self-Directed Learning & Continuous Engagement with AI Research',
+    description: "I'm constantly absorbing AI content - tech podcasts during my entire 8-hour factory shifts, then experimenting with different AI models when I get home. I use AI like a partner rather than just a tool. Most people in rural Wisconsin have barely heard of this stuff, but I've been diving deep since day one of ChatGPT.",
+    category: 'soft'
   },
   {
     id: 'workflow-design',
