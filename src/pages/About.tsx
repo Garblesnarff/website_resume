@@ -1,13 +1,12 @@
 import { Brain, BookOpen, Heart, Clock } from 'lucide-react';
-import aboutBackground from '../../public/backgrounds/about-background.png';
 
 const About = () => {
   return (
     <>
-      <section 
+      <section
       className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
       style={{
-        backgroundImage: `url(${aboutBackground})`,
+        backgroundImage: `url('/backgrounds/about-background.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
