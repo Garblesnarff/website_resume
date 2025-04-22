@@ -5,6 +5,8 @@ import { projects, auroraProject } from '../data/projects';
 import { auroraChatLog } from '../data/aurora-chat-log'; // Import chat log data
 import ChatLogDisplay from '../components/ChatLogDisplay'; // Import new component
 import { Brain, Code } from 'lucide-react';
+import projectsBackground from '../../public/backgrounds/projects-background.png';
+import auroraBackground from '../../public/backgrounds/aurora-background.png';
 
 const Projects = () => {
   const location = useLocation();
@@ -34,7 +36,14 @@ const Projects = () => {
       </section>
 
       <section className="section bg-white">
-        <div className="container-custom">
+        <div 
+          className="container-custom py-12"
+          style={{
+            backgroundImage: `url(${projectsBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}>
           <div className="grid gap-10">
             {projects.map((project) => {
               // Update variant type to include 'story-automation' and 'recipe-scraper'
@@ -55,7 +64,16 @@ const Projects = () => {
       </section>
 
       <section id="aurora-exploration" className="section bg-gray-50">
-        <div className="container-custom">
+        <div 
+          className="container-custom"
+          style={{
+            backgroundImage: `url(${auroraBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            paddingTop: '3rem',
+            paddingBottom: '3rem'
+          }}>
           <div className="max-w-4xl mx-auto">
             <div className="card overflow-visible">
               <div className="p-8">

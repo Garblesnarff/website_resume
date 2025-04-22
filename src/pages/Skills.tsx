@@ -1,6 +1,7 @@
 import SkillItem from '../components/SkillItem';
 import { getSkillsByCategory } from '../data/skills';
 import { Brain, Code, Search, Heart } from 'lucide-react';
+import skillsBackground from '../../public/backgrounds/skills-background.png';
 
 const Skills = () => {
   const { core, technical, analysis, soft } = getSkillsByCategory();
@@ -27,7 +28,13 @@ const Skills = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white">
+      <section 
+      className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
+      style={{
+        backgroundImage: `url(${skillsBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
         <div className="container-custom">
           <h1 className="mb-6 text-white text-center">My AI Skills</h1>
           <p className="text-xl text-center max-w-3xl mx-auto text-gray-200">

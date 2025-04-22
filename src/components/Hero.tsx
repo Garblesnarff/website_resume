@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import heroBackground from '../../public/backgrounds/hero-background.png';
 
 const headlines = [
   "Rob Hanson: Building the Future, One Prompt at a Time",
@@ -27,8 +28,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white">
-      <div className="absolute inset-0 opacity-20 bg-[url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center"></div>
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white"
+      style={{
+        backgroundImage: `url(${heroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
+      <div className="absolute inset-0 opacity-80 bg-gradient-to-b from-gray-900/80 to-primary-900/80"></div>
       
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">

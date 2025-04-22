@@ -1,11 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Brain, Github, Mail, X } from 'lucide-react'; // Replaced Linkedin with X
+import footerBackground from '../../../public/backgrounds/footer-background.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer 
+      className="bg-gray-900 text-white py-12"
+      style={{
+        backgroundImage: `url(${footerBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
