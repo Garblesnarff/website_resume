@@ -35,7 +35,13 @@ export const projects: Project[] = [
       'Directing AI for Application Development', 
       'Complex Workflow Design'
     ],
-    featured: true
+    featured: true,
+    links: { // Corrected links structure
+      githubTool: '[GitHub Tool link will be added here]',
+      // Removed githubDatabase
+      preview: '[Preview link will be added here]',
+      video: '[Demo video link will be added here]'
+    }
   },
   {
     id: 'recipe-scraper',
@@ -48,8 +54,11 @@ export const projects: Project[] = [
       'AI-Assisted Utility Development', 
       'Basic Data Management Orchestration'
     ],
-    links: { // Added links section
-      githubTool: 'https://github.com/Garblesnarff/recipe-galaxy-sync'
+    links: { // Corrected links structure
+      githubTool: 'https://github.com/Garblesnarff/recipe-galaxy-sync',
+      // Removed githubDatabase
+      preview: '[Preview link will be added here]',
+      video: '[Demo video link will be added here]'
     }
   },
   {
@@ -62,8 +71,11 @@ export const projects: Project[] = [
       'Directing AI for Utility Creation', 
       'Basic Security Concept Implementation via AI'
     ],
-    links: { // Add links for api-key-wallet project
-      githubTool: 'https://github.com/Garblesnarff/keyguardian'
+    links: { // Corrected links structure (no preview)
+      githubTool: 'https://github.com/Garblesnarff/keyguardian',
+      // Removed githubDatabase
+      // Removed preview
+      video: '[Demo video link will be added here]'
     }
   }
 ];
