@@ -74,7 +74,7 @@ const About = () => {
               
               <h2>How I Work With AI</h2>
               <p>
-                I treat AI like a partner with a unique personality - a 5-year-old PhD-level genius with ADHD. If you work with it right, you can build or learn almost anything. Most people around here in rural Wisconsin still use AI like Google, if they've heard of it at all. But I've found there's way more potential when you learn how to have a real back-and-forth with these systems.
+                I treat AI like a partner with a unique personality, like a 5-year-old PhD-level genius with ADHD. If you work with it right, you can build or learn almost anything. Most people around here in rural Wisconsin still use AI like Google, if they've heard of it at all. But I've found there's way more potential when you learn how to have a real back-and-forth with these systems.
               </p>
 
               <p>
