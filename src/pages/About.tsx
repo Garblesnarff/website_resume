@@ -50,11 +50,11 @@ const About = () => {
               
               <h2>How I Work With AI</h2>
               <p>
-                I've spent enough time with these AI systems to get a feel for what works and what doesn't. There's been lots of different approaches, lots learned, but mostly, I just have a lot of conversations with them, figure out what kinds of prompts get the best results, and when something breaks, we troubleshoot it together.
+                I treat AI like a partner with a unique personality - a 5-year-old PhD-level genius with ADHD. If you work with it right, you can build or learn almost anything. Most people around here in rural Wisconsin still use AI like Google, if they've heard of it at all. But I've found there's way more potential when you learn how to have a real back-and-forth with these systems.
               </p>
-              
+
               <p>
-                This hands-on approach has let me build tools I wouldn't be able to create on my own. I don't have coding skills, but I can explain what I want clearly enough that the AI understands, and when it gets stuck, I help guide it in the right direction. It's basically teamwork - I bring the ideas and practical knowledge, the AI brings the technical skills.
+                I'm constantly feeding the AI the right information, asking the right follow-up questions, and working together toward a goal. There's nothing fancy to my approach - I've just put in enough hours (thousands at this point) to get a feel for what works and what doesn't.
               </p>
             </div>
           </div>
