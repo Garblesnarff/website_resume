@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail'; // Import the new ProjectDetail component
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
+import LearningResources from './pages/LearningResources'; // Import the Learning Resources page
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectDetail />} /> {/* Add the dynamic route */}
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/learning-resources" element={<LearningResources />} /> {/* Add the Learning Resources route */}
         </Routes>
       </Layout>
     </BrowserRouter>

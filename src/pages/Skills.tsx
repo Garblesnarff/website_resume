@@ -1,6 +1,7 @@
 import SkillItem from '../components/SkillItem';
 import { getSkillsByCategory } from '../data/skills';
 import { Brain, Code, Search, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Import Link
 import skillsBackground from '../../public/backgrounds/skills-background.png';
 
 const Skills = () => {
@@ -89,7 +90,13 @@ const Skills = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {soft.map((skill) => (
-              <SkillItem key={skill.id} skill={skill} />
+              skill.id === 'learning' ? (
+                <Link key={skill.id} to="/learning-resources" className="block h-full"> {/* Link for specific skill */}
+                  <SkillItem skill={skill} />
+                </Link>
+              ) : (
+                <SkillItem key={skill.id} skill={skill} /> // Regular item for other skills
+              )
             ))}
           </div>
         </div>

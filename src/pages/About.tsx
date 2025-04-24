@@ -1,4 +1,5 @@
 import { Brain, BookOpen, Heart, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Import Link
 
 const About = () => {
   return (
@@ -94,7 +95,9 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+            {/* Wrap the Continuous Learning card with a Link */}
+            <Link to="/learning-resources" className="block h-full transition-transform duration-300 hover:scale-[1.03]"> 
+              <div className="bg-white p-8 rounded-xl shadow-sm text-center h-full flex flex-col"> 
               <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Brain className="w-8 h-8 text-primary-600" />
               </div>
@@ -102,9 +105,10 @@ const About = () => {
               <p className="text-gray-600">
                 I'm constantly absorbing AI content - tech podcasts during my entire 8-hour factory shifts, then diving into tools like Claude, Gemini and Grok when I get home. Not exactly what you'd expect from a forklift driver, but watching these systems evolve fascinates me.
               </p>
-            </div>
+              </div>
+            </Link>
             
-            <div className="bg-white p-8 rounded-xl shadow-sm text-center">
+            <div className="bg-white p-8 rounded-xl shadow-sm text-center"> {/* No link for Interdisciplinary Thinking */}
               <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="w-8 h-8 text-primary-600" />
               </div>
