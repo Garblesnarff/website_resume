@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LearningResources from './pages/LearningResources';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -20,7 +21,6 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectDetail />} /> {/* Add the dynamic route */}
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/learning-resources" element={<LearningResources />} /> {/* Add the Learning Resources route */}
         </Routes>
       </Layout>
     </BrowserRouter>

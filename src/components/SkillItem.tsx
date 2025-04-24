@@ -1,4 +1,5 @@
 import { Skill } from '../types';
+import { Link } from 'react-router-dom';
 
 interface SkillItemProps {
   skill: Skill;
@@ -83,16 +84,29 @@ const SkillItem = ({ skill, theme = 'default' }: SkillItemProps) => {
   }
 
   return (
-    <div className={cardClasses}>
-      {/* Apply theme colors, fonts, and sizes */}
-      <h3 className={`${titleSizeWeight} ${titleFont} mb-2 ${titleColor}`}>{skill.name}</h3>
-      <p className={`${descriptionColor} ${descriptionSize} mb-3 flex-grow ${descriptionFont}`}>{skill.description}</p>
-      <div className="mt-auto pt-2"> {/* Push category to bottom */}
-        <span className={`${categoryColor} ${categoryFont} px-3 py-1 rounded-full ${categorySize} inline-block`}>
-          {skill.category.charAt(0).toUpperCase() + skill.category.slice(1)}
-        </span>
+    skill.name === 'Self-Directed Learning & Continuous Engagement with AI Research' ? (
+      <Link to="/learning-resources" className={cardClasses}>
+        {/* Apply theme colors, fonts, and sizes */}
+        <h3 className={`${titleSizeWeight} ${titleFont} mb-2 ${titleColor}`}>{skill.name}</h3>
+        <p className={`${descriptionColor} ${descriptionSize} mb-3 flex-grow ${descriptionFont}`}>{skill.description}</p>
+        <div className="mt-auto pt-2"> {/* Push category to bottom */}
+          <span className={`${categoryColor} ${categoryFont} px-3 py-1 rounded-full ${categorySize} inline-block`}>
+            {skill.category.charAt(0).toUpperCase() + skill.category.slice(1)}
+          </span>
+        </div>
+      </Link>
+    ) : (
+      <div className={cardClasses}>
+        {/* Apply theme colors, fonts, and sizes */}
+        <h3 className={`${titleSizeWeight} ${titleFont} mb-2 ${titleColor}`}>{skill.name}</h3>
+        <p className={`${descriptionColor} ${descriptionSize} mb-3 flex-grow ${descriptionFont}`}>{skill.description}</p>
+        <div className="mt-auto pt-2"> {/* Push category to bottom */}
+          <span className={`${categoryColor} ${categoryFont} px-3 py-1 rounded-full ${categorySize} inline-block`}>
+            {skill.category.charAt(0).toUpperCase() + skill.category.slice(1)}
+          </span>
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
