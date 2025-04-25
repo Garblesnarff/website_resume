@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface SkillItemProps {
   skill: Skill;
-  theme?: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper'; // Added recipe-scraper theme option
+  theme?: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio'; // Added astral-audio theme option
 }
 
 const getCategoryColor = (category: string) => {
@@ -76,6 +76,17 @@ const SkillItem = ({ skill, theme = 'default' }: SkillItemProps) => {
     titleSizeWeight = 'text-lg font-medium'; // Adjusted size/weight
     descriptionFont = 'font-sans';
     descriptionSize = 'text-base'; // Keep base size for description
+    categoryFont = 'font-sans'; // Use sans-serif for category tag
+    categorySize = 'text-xs'; // Adjusted size
+  } else if (theme === 'astral-audio') { // Add Astral Audio theme
+    categoryColor = 'bg-astralAudio-secondary/50 text-astralAudio-accent'; // Accent tag on secondary bg
+    cardClasses = 'bg-gradient-to-br from-astralAudio-bg-gradient-start to-astralAudio-bg-gradient-end border border-astralAudio-border rounded-lg shadow-md hover:shadow-xl p-6 h-full flex flex-col animate-slideUp transition-all duration-300 hover:scale-[1.03]'; // Dark gradient bg
+    titleColor = 'text-astralAudio-primary'; // Primary color title
+    descriptionColor = 'text-astralAudio-foreground'; // Light foreground text
+    titleFont = 'font-sans'; // Use sans-serif
+    titleSizeWeight = 'text-lg font-medium'; // Adjusted size/weight
+    descriptionFont = 'font-sans';
+    descriptionSize = 'text-base'; // Keep base size
     categoryFont = 'font-sans'; // Use sans-serif for category tag
     categorySize = 'text-xs'; // Adjusted size
   } else {

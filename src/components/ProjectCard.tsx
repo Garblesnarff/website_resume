@@ -4,11 +4,11 @@ import { ArrowRight } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
-  compact?: boolean;
-  variant?: 'default' | 'compact' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper'; // Added 'recipe-scraper' variant
+  variant?: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio'; // Added 'astral-audio' variant
+  className?: string;
 }
 
-const ProjectCard = ({ project, compact = false, variant = 'default' }: ProjectCardProps) => {
+const ProjectCard = ({ project, variant = 'default', className }: ProjectCardProps) => {
 
   // Updated 'tibetan' variant logic - Wrapped in Link
   if (variant === 'tibetan') {
@@ -50,7 +50,7 @@ const ProjectCard = ({ project, compact = false, variant = 'default' }: ProjectC
         // Apply NEW Story Automation theme: purple gradient bg, subtle border/shadow, rounded, transitions, hover scale
         className="card h-full flex flex-col animate-slideUp bg-gradient-to-br from-storyAutomation-purple-light to-storyAutomation-purple-dark border border-storyAutomation-purple-light/50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02]"
       >
-        <div className="p-5 flex-1"> {/* Using p-5 (~20px) */}
+        <div className="p-5 flex-1"> {/* Using p-5 */}
           {/* Title: Light text, Inter font */}
           <h3 className="text-lg font-sans font-medium text-storyAutomation-text-light mb-2 group-hover:text-white transition-colors duration-300">{project.title}</h3>
           {/* Goal text: Muted light text, Inter font */}
@@ -101,6 +101,35 @@ const ProjectCard = ({ project, compact = false, variant = 'default' }: ProjectC
     );
   }
 
+  // Astral Audio variant logic
+  if (variant === 'astral-audio') {
+    return (
+      <Link
+        to={`/projects/${project.id}`}
+        id={project.id}
+        // Apply NEW Astral Audio theme: dark gradient bg, subtle border, rounded, transitions, hover scale
+        className="card h-full flex flex-col animate-slideUp bg-gradient-to-br from-astralAudio-bg-gradient-start to-astralAudio-bg-gradient-end border border-astralAudio-border rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02]"
+      >
+        <div className="p-5 flex-1"> {/* Using p-5 */}
+          {/* Title: Light text (foreground), Sans font */}
+          <h3 className="text-lg font-sans font-medium text-astralAudio-foreground mb-2 group-hover:text-astralAudio-primary transition-colors duration-300">{project.title}</h3>
+          {/* Goal text: Muted text, Sans font */}
+          <p className="text-astralAudio-muted mb-4 line-clamp-3 font-sans text-sm">{project.goal}</p>
+          <div className="flex flex-wrap gap-2">
+            {/* Skill tags: Accent text on secondary bg, Sans-serif font */}
+            {project.skills.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-astralAudio-secondary/50 text-astralAudio-accent px-3 py-1 rounded-full text-xs font-sans group-hover:bg-astralAudio-secondary/80 transition-colors duration-300"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    );
+  }
 
   // KeyGuardian variant logic
   if (variant === 'keyguardian') {
@@ -132,27 +161,6 @@ const ProjectCard = ({ project, compact = false, variant = 'default' }: ProjectC
     );
   }
 
-  // Original compact logic (Apply default fonts)
-  // Base card uses rounded-xl from index.css, compact doesn't override
-  if (compact) {
-    return (
-      <div className="card h-full flex flex-col animate-slideUp">
-        <div className="p-6 flex-1">
-          <h3 className="text-xl font-serif font-bold mb-2">{project.title}</h3> {/* Use font-serif */}
-          <p className="text-gray-600 mb-4 line-clamp-2 font-sans">{project.goal}</p> {/* Use font-sans */}
-          <Link
-            to={`/projects#${project.id}`}
-            className="text-primary-600 font-medium flex items-center gap-1 hover:gap-2 transition-all font-sans" // Use font-sans
-          >
-            Learn more <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  // Original default (full) view logic (Apply default fonts)
-  // Base card uses rounded-xl
   return (
     <Link to={`/projects/${project.id}`} id={project.id} className="card animate-slideUp block hover:scale-[1.01] transition-transform duration-300"> {/* Added subtle hover scale to default */}
       <div className="p-8">

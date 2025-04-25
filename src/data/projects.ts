@@ -77,6 +77,27 @@ export const projects: Project[] = [
       // Removed preview
       video: '[Demo video link will be added here]'
     }
+  },
+  {
+    id: 'astral-audio',
+    title: 'Astral Audio',
+    goal: 'Provide users with customizable soundscapes using binaural beats and presets to help induce specific mental or sensory states like relaxation, lucid dreaming, astral projection, and remote viewing.',
+    process: 'Web application focused on delivering immersive auditory experiences. Features interactive audio playback controls, real-time waveform visualizations, and guided content. Integrates sophisticated audio engine management with dynamic visual components.',
+    outcome: 'A web application delivering immersive auditory experiences with customizable soundscapes and visualizations.',
+    skills: [
+      'Web Application Development',
+      'React',
+      'Tailwind CSS',
+      'Audio Processing Integration',
+      'UI/UX Design',
+      'Interactive Visualizations'
+    ],
+    featured: true,
+    links: {
+      githubTool: '[GitHub Tool link will be added here]',
+      preview: '[Preview link will be added here]',
+      video: '[Demo video link will be added here]'
+    }
   }
 ];
 

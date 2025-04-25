@@ -46,8 +46,8 @@ const Projects = () => {
           }}>
           <div className="grid gap-10">
             {projects.map((project) => {
-              // Update variant type to include 'story-automation' and 'recipe-scraper'
-              let variant: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' = 'default';
+              // Update variant type to include 'story-automation', 'recipe-scraper', and 'astral-audio'
+              let variant: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' = 'default';
               if (project.id === 'tibetan-translation') {
                 variant = 'tibetan';
               } else if (project.id === 'story-automation') { // Add condition for story-automation
@@ -56,6 +56,8 @@ const Projects = () => {
                 variant = 'recipe-scraper';
               } else if (project.id === 'api-key-wallet') {
                 variant = 'keyguardian'; // Corrected variant assignment
+              } else if (project.id === 'astral-audio') { // Add condition for astral-audio
+                variant = 'astral-audio';
               }
               return <ProjectCard key={project.id} project={project} variant={variant} />;
             })}

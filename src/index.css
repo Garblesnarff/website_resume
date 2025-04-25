@@ -4,6 +4,76 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Default Light Theme Variables (Example - Adjust as needed) */
+  --background: 0 0% 100%; /* White */
+  --foreground: 240 10% 3.9%; /* Dark Gray */
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 262.1 83.3% 57.8%; /* Default Purple */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 4.8% 95.9%; /* Light Gray */
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%; /* Red */
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 262.1 83.3% 57.8%; /* Default Purple */
+  --radius: 0.5rem;
+
+  /* Tibetan Theme */
+  --tibetan-maroon: 345 65% 35%;
+  --tibetan-gold: 40 80% 60%;
+  --tibetan-brown: 30 25% 45%;
+
+  /* KeyGuardian Theme */
+  --keyguardian-teal: 170 45% 45%;
+  --keyguardian-light-text: 0 0% 95%;
+  --keyguardian-gray-text: 200 5% 75%;
+  --keyguardian-vibrant-blue: 210 80% 60%;
+
+  /* Story Automation Theme */
+  --storyAutomation-purple-light: 275 60% 25%;
+  --storyAutomation-purple-dark: 275 70% 15%;
+  --storyAutomation-text-light: 275 15% 90%;
+  --storyAutomation-text-muted: 275 10% 70%;
+
+  /* Recipe Scraper Theme */
+  --recipeScraper-card-bg: 0 0% 100%;
+  --recipeScraper-border-light: 210 20% 90%;
+  --recipeScraper-primary-green: 140 60% 40%;
+  --recipeScraper-light-green: 140 40% 90%;
+  --recipeScraper-text-dark: 210 10% 25%;
+  --recipeScraper-text-muted: 210 8% 55%;
+
+  /* Astral Audio Theme */
+  --astral-bg: 260 40% 8%; /* Deep dark blue/purple */
+  --astral-bg-gradient-start: 270 50% 15%; /* Slightly lighter purple */
+  --astral-bg-gradient-end: 250 60% 12%; /* Slightly bluer dark */
+  --astral-foreground: 240 10% 95%; /* Very light gray/white */
+  --astral-primary: 270 70% 65%; /* Vibrant purple */
+  --astral-primary-foreground: 270 10% 98%; /* White for primary elements */
+  --astral-secondary: 240 20% 20%; /* Dark muted blue */
+  --astral-accent: 200 80% 60%; /* Bright cyan */
+  --astral-muted: 240 10% 25%; /* Dark gray-blue */
+  --astral-border: 260 30% 30%; /* Muted purple border */
+  --astral-ring: 270 70% 75%; /* Lighter purple for focus rings */
+}
+
+.dark {
+  /* Define dark theme variables if needed, or rely on Tailwind dark: prefix */
+  /* Example:
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  ... etc ... */
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

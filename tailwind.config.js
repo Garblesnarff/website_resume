@@ -72,6 +72,22 @@ export default {
           'text-muted': '#6C757D',
           'border-light': '#DEE2E6',
         },
+        // Add Astral Audio colors referencing CSS variables
+        astralAudio: {
+          bg: 'hsl(var(--astral-bg))',
+          'bg-gradient-start': 'hsl(var(--astral-bg-gradient-start))',
+          'bg-gradient-end': 'hsl(var(--astral-bg-gradient-end))',
+          foreground: 'hsl(var(--astral-foreground))',
+          primary: {
+            DEFAULT: 'hsl(var(--astral-primary))',
+            foreground: 'hsl(var(--astral-primary-foreground))',
+          },
+          secondary: 'hsl(var(--astral-secondary))',
+          accent: 'hsl(var(--astral-accent))',
+          muted: 'hsl(var(--astral-muted))',
+          border: 'hsl(var(--astral-border))',
+          ring: 'hsl(var(--astral-ring))',
+        },
       },
       fontFamily: { // Ensure sans and mono are present
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],

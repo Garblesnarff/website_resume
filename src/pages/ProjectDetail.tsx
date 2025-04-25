@@ -37,6 +37,7 @@ const ProjectDetail: React.FC = () => {
   const isKeyGuardianProject = project.id === 'api-key-wallet'; // Add check for KeyGuardian
   const isStoryAutomationProject = project.id === 'story-automation'; // Add check for Story Automation
   const isRecipeScraperProject = project.id === 'recipe-scraper'; // Add check for Recipe Scraper
+  const isAstralAudioProject = project.id === 'astral-audio'; // Add check for Astral Audio
 
   // Define conditional classes based on the project theme
   let containerClasses = "py-8"; // Default padding
@@ -45,8 +46,8 @@ const ProjectDetail: React.FC = () => {
   let textClasses = "text-gray-700 font-sans"; // Default
   let linkClasses = "text-blue-600 hover:underline font-sans"; // Default
   let strongClasses = "text-gray-800 font-semibold font-sans"; // Default
-  // Update skillTheme type to include 'story-automation' and 'recipe-scraper'
-  let skillTheme: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' = 'default';
+  // Update skillTheme type to include 'story-automation', 'recipe-scraper', and 'astral-audio'
+  let skillTheme: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' = 'default';
 
   if (isTibetanProject) {
     containerClasses = "bg-gradient-to-br from-tibetan-gold/20 to-tibetan-maroon/15 border border-tibetan-gold/20 rounded-lg shadow-md p-6 md:p-8";
@@ -81,6 +82,15 @@ const ProjectDetail: React.FC = () => {
     linkClasses = "text-recipeScraper-primary-green hover:text-green-700 underline font-sans"; // Green links, sans
     strongClasses = "text-recipeScraper-text-dark font-semibold font-sans"; // Dark semi-bold text
     skillTheme = 'recipe-scraper';
+  } else if (isAstralAudioProject) { // Add Astral Audio theme
+    // Using sans-serif fonts primarily for this theme
+    containerClasses = "bg-gradient-to-br from-astralAudio-bg-gradient-start to-astralAudio-bg-gradient-end border border-astralAudio-border rounded-lg shadow-xl p-6 md:p-8"; // Dark gradient bg
+    titleClasses = "text-astralAudio-primary font-sans text-3xl"; // Primary color title, sans
+    headingClasses = "text-astralAudio-primary font-sans font-semibold text-2xl"; // Primary color heading, sans, semi-bold
+    textClasses = "text-astralAudio-foreground font-sans text-base"; // Light foreground text, sans
+    linkClasses = "text-astralAudio-accent hover:text-cyan-400 underline font-sans"; // Accent color links, sans
+    strongClasses = "text-astralAudio-foreground font-semibold font-sans"; // Light foreground semi-bold text
+    skillTheme = 'astral-audio';
   }
 
 
@@ -116,6 +126,7 @@ const ProjectDetail: React.FC = () => {
                 isKeyGuardianProject ? 'bg-keyguardian-vibrant-blue/10 text-keyguardian-vibrant-blue font-sans' : // KeyGuardian fallback
                 isStoryAutomationProject ? 'bg-storyAutomation-purple-dark/60 text-storyAutomation-text-light font-sans' : // Story Automation fallback
                 isRecipeScraperProject ? 'bg-recipeScraper-light-green text-recipeScraper-text-dark font-sans' : // Recipe Scraper fallback
+                isAstralAudioProject ? 'bg-astralAudio-secondary/50 text-astralAudio-accent font-sans' : // Astral Audio fallback
                 'bg-gray-200 text-gray-800 font-sans' // Default fallback
               }`}>
                 {skillName}
@@ -193,6 +204,20 @@ const ProjectDetail: React.FC = () => {
               <li>Small teams needing secure credential sharing</li>
               <li>Projects requiring secure API key access (like Story Generator)</li>
             </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Astral Audio Assessment */}
+      {isAstralAudioProject && (
+        <div className="mt-8">
+           {/* Apply theme text/heading colors manually */}
+          <div className={`prose max-w-none ${textClasses}`}> {/* Prose applies its own styles, override manually */}
+            <h3 className={headingClasses}>Project Overview</h3>
+            <p>Web application focused on delivering immersive auditory experiences using binaural beats and other sound presets. It features interactive audio playback controls, real-time waveform visualizations, and guided content for various auditory states like lucid dreaming, astral projection, and remote viewing. The app integrates sophisticated audio engine management with dynamic visual components to create a rich, user-friendly interface.</p>
+            <h3 className={headingClasses}>Core Purpose</h3>
+            <p>This project aims to provide users with customizable soundscapes that help induce specific mental or sensory states, such as relaxation, lucid dreaming, astral projection, and remote viewing. It combines audio synthesis with animated visualizers, session presets, and user controls to offer a holistic sensory experience. Additionally, it includes educational and safety information to enhance user understanding and responsible use of binaural and brainwave entrainment technologies.</p>
+            {/* Add Target Audience if needed */}
           </div>
         </div>
       )}

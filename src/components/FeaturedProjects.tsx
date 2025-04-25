@@ -13,22 +13,34 @@ const FeaturedProjects = () => {
             Highlighting my most significant work in AI orchestration and directed development.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          {featuredProjects.map((project) => {
+
+        {/* Modified grid layout to center the last card */}
+        <div className="grid md:grid-cols-2 gap-8 justify-items-center">
+          {featuredProjects.map((project, index) => {
+            let variant = 'default';
             if (project.id === 'tibetan-translation') {
-              return <ProjectCard key={project.id} project={project} variant="tibetan" />;
-            } else if (project.id === 'story-automation') { // Add condition for story-automation
-              return <ProjectCard key={project.id} project={project} variant="story-automation" />;
-            } else { // Default to compact for other featured projects
-              return <ProjectCard key={project.id} project={project} compact />;
+              variant = 'tibetan';
+            } else if (project.id === 'story-automation') {
+              variant = 'story-automation';
+            } else if (project.id === 'api-key-wallet') {
+              variant = 'keyguardian';
+            } else if (project.id === 'recipe-scraper') {
+              variant = 'recipe-scraper';
+            } else if (project.id === 'astral-audio') {
+              variant = 'astral-audio';
             }
+
+            // Apply col-span-2 to the last card on medium screens and up
+            const isLastCard = index === featuredProjects.length - 1;
+            const cardClasses = isLastCard ? 'md:col-span-2' : '';
+
+            return <ProjectCard key={project.id} project={project} variant={variant} className={cardClasses} />;
           })}
         </div>
-        
+
         <div className="mt-12 text-center">
-          <Link 
-            to="/projects" 
+          <Link
+            to="/projects"
             className="btn btn-outline inline-flex items-center"
           >
             View All Projects <ArrowRight className="ml-2" size={18} />
