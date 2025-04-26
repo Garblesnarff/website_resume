@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 
-            className={`mb-6 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`mb-6 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'} text-primary-300`}
           >
             {headlines[currentHeadline]}
           </h1>
