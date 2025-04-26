@@ -102,7 +102,7 @@ export const projects: Project[] = [
   {
     id: 'imagine-ink',
     title: 'Imagine Ink',
-    goal: 'Create an AI-powered children\'s storybook platform with personalized stories and AI-generated illustrations.',
+    goal: 'Create AI-powered children\'s storybooks with personalized stories and illustrations.',
     process: 'Developed a seamless interface integrating AI storytelling with image generation to bring stories to life. Built customizable page layouts, easy editing tools, and export functionality to create delightful children\'s storybooks.',
     outcome: 'A comprehensive platform that empowers users without artistic or design skills to create magical, visually compelling stories efficiently with AI assistance.',
     skills: [

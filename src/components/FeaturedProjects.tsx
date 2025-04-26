@@ -28,6 +28,8 @@ const FeaturedProjects = () => {
               variant = 'recipe-scraper';
             } else if (project.id === 'astral-audio') {
               variant = 'astral-audio';
+            } else if (project.id === 'imagine-ink') {
+              variant = 'imagine-ink';
             }
 
             // Check if it's the last card and if we have an odd number of featured projects
