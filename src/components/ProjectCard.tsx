@@ -1,7 +1,7 @@
 import { Project } from '../types';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import inkBackground from '../../public/backgrounds/ink-background.png';
+// Removed direct import of public asset
 
 interface ProjectCardProps {
   project: Project;
@@ -144,7 +144,7 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
         <div 
           className="absolute inset-0 opacity-25 z-0" 
           style={{
-            backgroundImage: `url(${inkBackground})`,
+            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/ink-background.png')`, // Use base path for public assets
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}

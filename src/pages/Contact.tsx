@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Send, Mail, MessageSquare } from 'lucide-react';
-import contactHeaderBackground from '../../public/backgrounds/contact-header.png';
+// Removed direct import of public asset
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,7 +48,7 @@ const Contact = () => {
         <div 
           className="absolute inset-0 z-0 opacity-80" 
           style={{
-            backgroundImage: `url(${contactHeaderBackground})`,
+            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/contact-header.png')`, // Use base path for public assets
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}

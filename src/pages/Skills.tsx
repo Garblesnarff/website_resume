@@ -2,7 +2,7 @@ import SkillItem from '../components/SkillItem';
 import { getSkillsByCategory } from '../data/skills';
 import { Brain, Code, Search, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom'; // Import Link
-import skillsBackground from '../../public/backgrounds/skills-background.png';
+// Removed direct import of public asset
 
 const Skills = () => {
   const { core, technical, analysis, soft } = getSkillsByCategory();
@@ -32,7 +32,7 @@ const Skills = () => {
       <section 
       className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
       style={{
-        backgroundImage: `url(${skillsBackground})`,
+        backgroundImage: `url('/rob-hanson-portfolio/backgrounds/skills-background.png')`, // Use base path for public assets
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>

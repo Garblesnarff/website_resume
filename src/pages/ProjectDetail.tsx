@@ -19,7 +19,7 @@ import { useParams } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { skills } from '../data/skills'; // Import the central skills data
 import SkillItem from '../components/SkillItem'; // Assuming SkillItem is used for skills display
-import inkBackground from '../../public/backgrounds/ink-background.png';
+// Removed direct import of public asset
 
 const ProjectDetail: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -112,7 +112,7 @@ const ProjectDetail: React.FC = () => {
         <div 
           className="absolute inset-0 opacity-40 z-0" 
           style={{
-            backgroundImage: `url(${inkBackground})`,
+            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/ink-background.png')`, // Use base path for public assets
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}

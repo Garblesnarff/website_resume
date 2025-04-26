@@ -7,7 +7,7 @@ const About = () => {
       <section
       className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
       style={{
-        backgroundImage: `url('/backgrounds/about-background.png')`,
+        backgroundImage: `url('/rob-hanson-portfolio/backgrounds/about-background.png')`, // Use base path for public assets
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>

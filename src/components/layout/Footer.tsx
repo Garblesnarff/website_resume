@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Brain, Github, Mail, X } from 'lucide-react'; // Replaced Linkedin with X
-import footerBackground from '../../../public/backgrounds/footer-background.png';
+// Removed direct import of public asset
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,7 +9,7 @@ const Footer = () => {
     <footer 
       className="bg-gray-900 text-white py-12"
       style={{
-        backgroundImage: `url(${footerBackground})`,
+        backgroundImage: `url('/rob-hanson-portfolio/backgrounds/footer-background.png')`, // Use base path for public assets
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>

@@ -5,9 +5,7 @@ import { projects, auroraProject } from '../data/projects';
 import { auroraChatLog } from '../data/aurora-chat-log'; // Import chat log data
 import ChatLogDisplay from '../components/ChatLogDisplay'; // Import new component
 import { Brain, Code } from 'lucide-react';
-import projectsBackground from '../../public/backgrounds/projects-background.png';
-import auroraBackground from '../../public/backgrounds/aurora-background.png';
-import projectHeaderBackground from '../../public/backgrounds/project-header.png';
+// Removed direct imports of public assets
 
 const Projects = () => {
   const location = useLocation();
@@ -31,7 +29,7 @@ const Projects = () => {
         <div 
           className="absolute inset-0 z-0 opacity-80" 
           style={{
-            backgroundImage: `url(${projectHeaderBackground})`,
+            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/project-header.png')`, // Use base path for public assets
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -48,7 +46,7 @@ const Projects = () => {
         <div 
           className="container-custom py-12"
           style={{
-            backgroundImage: `url(${projectsBackground})`,
+            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/projects-background.png')`, // Use base path for public assets
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
@@ -80,7 +78,7 @@ const Projects = () => {
         <div 
           className="container-custom"
           style={{
-            backgroundImage: `url(${auroraBackground})`,
+            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/aurora-background.png')`, // Use base path for public assets
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
