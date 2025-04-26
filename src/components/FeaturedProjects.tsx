@@ -17,7 +17,8 @@ const FeaturedProjects = () => {
         {/* Grid layout with proper centering for the last card */}
         <div className="grid md:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => {
-            let variant = 'default';
+            // Explicitly type the variant to match the expected prop type subset
+            let variant: "default" | "tibetan" | "keyguardian" | "story-automation" | "recipe-scraper" | "astral-audio" | "imagine-ink" = 'default';
             if (project.id === 'tibetan-translation') {
               variant = 'tibetan';
             } else if (project.id === 'story-automation') {

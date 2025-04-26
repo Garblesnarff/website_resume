@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface SkillItemProps {
   skill: Skill;
-  theme?: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio'; // Added astral-audio theme option
+  theme?: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' | 'imagine-ink'; // Added astral-audio and imagine-ink theme options
 }
 
 const getCategoryColor = (category: string) => {
