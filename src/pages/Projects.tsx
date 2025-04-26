@@ -47,7 +47,7 @@ const Projects = () => {
           <div className="grid gap-10">
             {projects.map((project) => {
               // Update variant type to include 'story-automation', 'recipe-scraper', and 'astral-audio'
-              let variant: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' = 'default';
+              let variant: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' | 'imagine-ink' = 'default';
               if (project.id === 'tibetan-translation') {
                 variant = 'tibetan';
               } else if (project.id === 'story-automation') { // Add condition for story-automation
@@ -58,6 +58,8 @@ const Projects = () => {
                 variant = 'keyguardian'; // Corrected variant assignment
               } else if (project.id === 'astral-audio') { // Add condition for astral-audio
                 variant = 'astral-audio';
+              } else if (project.id === 'imagine-ink') { // Add condition for imagine-ink
+                variant = 'imagine-ink';
               }
               return <ProjectCard key={project.id} project={project} variant={variant} />;
             })}
