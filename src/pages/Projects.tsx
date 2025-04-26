@@ -7,6 +7,7 @@ import ChatLogDisplay from '../components/ChatLogDisplay'; // Import new compone
 import { Brain, Code } from 'lucide-react';
 import projectsBackground from '../../public/backgrounds/projects-background.png';
 import auroraBackground from '../../public/backgrounds/aurora-background.png';
+import projectHeaderBackground from '../../public/backgrounds/project-header.png';
 
 const Projects = () => {
   const location = useLocation();
@@ -26,8 +27,16 @@ const Projects = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white">
-        <div className="container-custom">
+      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white relative overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 opacity-80" 
+          style={{
+            backgroundImage: `url(${projectHeaderBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="container-custom relative z-10">
           <h1 className="mb-6 text-white text-center">My AI-Orchestrated Projects</h1>
           <p className="text-xl text-center max-w-3xl mx-auto text-gray-200">
             These projects showcase my "AI Orchestration" methodology, where I direct AI to build complex systems through strategic prompting, iterative refinement, and tool integration.
