@@ -37,8 +37,8 @@ const Projects = () => {
           }}
         ></div>
         <div className="container-custom relative z-10">
-          <h1 className="mb-6 text-white text-center">My AI-Orchestrated Projects</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-200">
+          <h1 className="mb-6 text-primary-300 text-center font-serif">My AI-Orchestrated Projects</h1>
+          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
             These projects showcase my "AI Orchestration" methodology, where I direct AI to build complex systems through strategic prompting, iterative refinement, and tool integration.
           </p>
         </div>

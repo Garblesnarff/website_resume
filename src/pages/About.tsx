@@ -12,7 +12,7 @@ const About = () => {
         backgroundPosition: 'center'
       }}>
         <div className="container-custom">
-          <h1 className="mb-6 text-white text-center">About Me: My Journey into AI</h1>
+          <h1 className="mb-6 text-primary-300 text-center font-serif">About Me: My Journey into AI</h1>
         </div>
       </section>
       

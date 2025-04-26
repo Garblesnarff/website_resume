@@ -37,8 +37,8 @@ const Skills = () => {
         backgroundPosition: 'center'
       }}>
         <div className="container-custom">
-          <h1 className="mb-6 text-white text-center">My AI Skills</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-200">
+          <h1 className="mb-6 text-primary-300 text-center font-serif">My AI Skills</h1>
+          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
             These capabilities represent expertise developed through thousands of hours of hands-on AI orchestration and directed development.
           </p>
         </div>
