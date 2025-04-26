@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+    <!-- Background -->
+    <defs>
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#000B22;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#001440;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Wave patterns -->
+        <pattern id="wave-grid" patternUnits="userSpaceOnUse" width="100" height="100">
+            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#0A2472" stroke-width="0.5" opacity="0.2"/>
+        </pattern>
+    </defs>
+
+    <!-- Base layer -->
+    <rect width="1000" height="600" fill="url(#bg-gradient)" />
+    <rect width="1000" height="600" fill="url(#wave-grid)" />
+
+    <!-- Dimensional flows -->
+    <g id="dimension-1" opacity="0.7">
+        <path d="M 100 300 C 250 200, 400 400, 550 300 S 850 200, 900 300" 
+              fill="none" stroke="#4DA8DA" stroke-width="2">
+            <animate attributeName="d" 
+                     dur="15s"
+                     repeatCount="indefinite"
+                     values="M 100 300 C 250 200, 400 400, 550 300 S 850 200, 900 300;
+                             M 100 300 C 250 400, 400 200, 550 300 S 850 400, 900 300;
+                             M 100 300 C 250 200, 400 400, 550 300 S 850 200, 900 300"/>
+        </path>
+    </g>
+
+    <g id="dimension-2" opacity="0.6">
+        <path d="M 100 400 C 300 300, 500 500, 700 400 S 900 300, 900 400" 
+              fill="none" stroke="#007CC7" stroke-width="2">
+            <animate attributeName="d"
+                     dur="12s"
+                     repeatCount="indefinite"
+                     values="M 100 400 C 300 300, 500 500, 700 400 S 900 300, 900 400;
+                             M 100 400 C 300 500, 500 300, 700 400 S 900 500, 900 400;
+                             M 100 400 C 300 300, 500 500, 700 400 S 900 300, 900 400"/>
+        </path>
+    </g>
+
+    <g id="dimension-3" opacity="0.5">
+        <path d="M 100 200 C 350 250, 450 150, 650 200 S 850 250, 900 200" 
+              fill="none" stroke="#5C95FF" stroke-width="2">
+            <animate attributeName="d"
+                     dur="18s"
+                     repeatCount="indefinite"
+                     values="M 100 200 C 350 250, 450 150, 650 200 S 850 250, 900 200;
+                             M 100 200 C 350 150, 450 250, 650 200 S 850 150, 900 200;
+                             M 100 200 C 350 250, 450 150, 650 200 S 850 250, 900 200"/>
+        </path>
+    </g>
+
+    <!-- Interference nodes -->
+    <g id="interference-points">
+        <circle cx="300" cy="300" r="4" fill="#E6F3FF" opacity="0.8">
+            <animate attributeName="opacity"
+                     values="0.8;0.3;0.8"
+                     dur="5s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="500" cy="250" r="4" fill="#E6F3FF" opacity="0.7">
+            <animate attributeName="opacity"
+                     values="0.7;0.2;0.7"
+                     dur="4s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="350" r="4" fill="#E6F3FF" opacity="0.6">
+            <animate attributeName="opacity"
+                     values="0.6;0.1;0.6"
+                     dur="6s"
+                     repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Information field -->
+    <g id="information-field" opacity="0.3">
+        <path d="M 0 0 L 1000 600" stroke="#A1C6EA" stroke-width="0.5" />
+        <path d="M 0 150 L 1000 750" stroke="#A1C6EA" stroke-width="0.5" />
+        <path d="M 0 300 L 1000 900" stroke="#A1C6EA" stroke-width="0.5" />
+    </g>
+</svg>
