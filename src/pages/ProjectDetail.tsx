@@ -38,6 +38,7 @@ const ProjectDetail: React.FC = () => {
   const isStoryAutomationProject = project.id === 'story-automation'; // Add check for Story Automation
   const isRecipeScraperProject = project.id === 'recipe-scraper'; // Add check for Recipe Scraper
   const isAstralAudioProject = project.id === 'astral-audio'; // Add check for Astral Audio
+  const isImagineInkProject = project.id === 'imagine-ink'; // Add check for Imagine Ink
 
   // Define conditional classes based on the project theme
   let containerClasses = "py-8"; // Default padding
@@ -47,7 +48,7 @@ const ProjectDetail: React.FC = () => {
   let linkClasses = "text-blue-600 hover:underline font-sans"; // Default
   let strongClasses = "text-gray-800 font-semibold font-sans"; // Default
   // Update skillTheme type to include 'story-automation', 'recipe-scraper', and 'astral-audio'
-  let skillTheme: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' = 'default';
+  let skillTheme: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' | 'imagine-ink' = 'default';
 
   if (isTibetanProject) {
     containerClasses = "bg-gradient-to-br from-tibetan-gold/20 to-tibetan-maroon/15 border border-tibetan-gold/20 rounded-lg shadow-md p-6 md:p-8";
@@ -91,6 +92,15 @@ const ProjectDetail: React.FC = () => {
     linkClasses = "text-astralAudio-accent hover:text-cyan-400 underline font-sans"; // Accent color links, sans
     strongClasses = "text-astralAudio-foreground font-semibold font-sans"; // Light foreground semi-bold text
     skillTheme = 'astral-audio';
+  } else if (isImagineInkProject) { // Add Imagine Ink theme
+    // Using sans-serif fonts primarily for this theme
+    containerClasses = "bg-white border border-imagineInk-border rounded-lg shadow-md p-6 md:p-8"; // White bg with border
+    titleClasses = "text-imagineInk-primary font-sans text-3xl"; // Primary color title, sans
+    headingClasses = "text-imagineInk-primary font-sans font-semibold text-2xl"; // Primary color heading, sans
+    textClasses = "text-imagineInk-text-dark font-sans text-base"; // Dark text, sans
+    linkClasses = "text-imagineInk-primary hover:text-imagineInk-primary-light underline font-sans"; // Primary color links, sans
+    strongClasses = "text-imagineInk-text-dark font-semibold font-sans"; // Dark text, sans, semi-bold
+    skillTheme = 'imagine-ink';
   }
 
 
@@ -127,6 +137,7 @@ const ProjectDetail: React.FC = () => {
                 isStoryAutomationProject ? 'bg-storyAutomation-purple-dark/60 text-storyAutomation-text-light font-sans' : // Story Automation fallback
                 isRecipeScraperProject ? 'bg-recipeScraper-light-green text-recipeScraper-text-dark font-sans' : // Recipe Scraper fallback
                 isAstralAudioProject ? 'bg-astralAudio-secondary/50 text-astralAudio-accent font-sans' : // Astral Audio fallback
+                isImagineInkProject ? 'bg-imagineInk-primary/20 text-imagineInk-primary font-sans' : // Imagine Ink fallback
                 'bg-gray-200 text-gray-800 font-sans' // Default fallback
               }`}>
                 {skillName}
@@ -218,6 +229,29 @@ const ProjectDetail: React.FC = () => {
             <h3 className={headingClasses}>Core Purpose</h3>
             <p>This project aims to provide users with customizable soundscapes that help induce specific mental or sensory states, such as relaxation, lucid dreaming, astral projection, and remote viewing. It combines audio synthesis with animated visualizers, session presets, and user controls to offer a holistic sensory experience. Additionally, it includes educational and safety information to enhance user understanding and responsible use of binaural and brainwave entrainment technologies.</p>
             {/* Add Target Audience if needed */}
+          </div>
+        </div>
+      )}
+
+      {/* Imagine Ink Assessment */}
+      {isImagineInkProject && (
+        <div className="mt-8">
+           {/* Apply theme text/heading colors manually */}
+          <div className={`prose max-w-none ${textClasses}`}> {/* Prose applies its own styles, override manually */}
+            <h3 className={headingClasses}>Project Overview</h3>
+            <p>Imagine Ink is an AI-powered children's storybook creation platform that enables users to design personalized storybooks with beautiful AI-generated illustrations. It combines AI storytelling with image generation to bring stories to life, providing customizable page layouts, easy editing, and seamless exporting.</p>
+            <h3 className={headingClasses}>Core Purpose</h3>
+            <p>Imagine Ink addresses the challenge of creating engaging and personalized children's storybooks without requiring artistic or design skills. By integrating AI-driven image generation and text storytelling, it empowers users—especially parents and educators—to create magical, visually compelling stories efficiently. The app also simplifies book management and exporting, enhancing workflow and creativity.</p>
+            <h3 className={headingClasses}>Target Audience</h3>
+            <ul className={`list-disc ml-5 ${textClasses}`}> {/* Ensure list text color matches */}
+              <li>Parents and guardians who want to make personalized stories for their children</li>
+              <li>Educators looking to create custom educational storybooks</li>
+              <li>Authors and storytellers seeking quick book prototyping with AI</li>
+              <li>Hobbyists interested in AI-assisted creative writing and illustration</li>
+              <li>Small creative teams focused on children's content production</li>
+            </ul>
+            <h3 className={headingClasses}>Colors and Styling</h3>
+            <p>Imagine Ink uses a modern light/dark theming approach with Tailwind CSS and CSS variables for color customization. The color palette features vibrant blue/purple shades, soft pastels for UI highlights, and clean contrasting backgrounds for optimal readability. The interface incorporates glassmorphism effects, smooth animations, and a professional typography system centered around the Inter font family.</p>
           </div>
         </div>
       )}

@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
-  variant?: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio'; // Added 'astral-audio' variant
+  variant?: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' | 'imagine-ink'; // Added 'imagine-ink' variant
   className?: string;
 }
 
@@ -121,6 +121,36 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
               <span
                 key={index}
                 className="bg-astralAudio-secondary/50 text-astralAudio-accent px-3 py-1 rounded-full text-xs font-sans group-hover:bg-astralAudio-secondary/80 transition-colors duration-300"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  // Imagine Ink variant logic
+  if (variant === 'imagine-ink') {
+    return (
+      <Link
+        to={`/projects/${project.id}`}
+        id={project.id}
+        // Apply Imagine Ink theme: Light background with accent border and shadow
+        className={`card h-full flex flex-col animate-slideUp bg-white border border-imagineInk-border rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group hover:scale-[1.02] ${className || ''}`}
+      >
+        <div className="p-5 flex-1"> {/* Using p-5 */}
+          {/* Title: Primary color text, Sans font */}
+          <h3 className="text-lg font-sans font-medium text-imagineInk-primary mb-2 group-hover:text-imagineInk-primary-light transition-colors duration-300">{project.title}</h3>
+          {/* Goal text: Dark text, Sans font */}
+          <p className="text-imagineInk-text-dark mb-4 line-clamp-3 font-sans text-sm">{project.goal}</p>
+          <div className="flex flex-wrap gap-2">
+            {/* Skill tags: Primary bg with light text, Sans-serif font */}
+            {project.skills.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-imagineInk-primary/90 text-imagineInk-text-light px-3 py-1 rounded-full text-xs font-sans group-hover:bg-imagineInk-primary transition-colors duration-300"
               >
                 {skill}
               </span>

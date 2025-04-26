@@ -98,6 +98,27 @@ export const projects: Project[] = [
       preview: 'astral-audio-alchemy.lovable.app',
       video: '[Demo video link will be added here]'
     }
+  },
+  {
+    id: 'imagine-ink',
+    title: 'Imagine Ink',
+    goal: 'Create an AI-powered children\'s storybook creation platform with personalized storybooks and AI-generated illustrations.',
+    process: 'Developed a seamless interface integrating AI storytelling with image generation to bring stories to life. Built customizable page layouts, easy editing tools, and export functionality to create delightful children\'s storybooks.',
+    outcome: 'A comprehensive platform that empowers users without artistic or design skills to create magical, visually compelling stories efficiently with AI assistance.',
+    skills: [
+      'UI/UX Design',
+      'React Development',
+      'AI Image Integration',
+      'Tailwind CSS',
+      'User-Centered Design',
+      'Responsive Web Development'
+    ],
+    featured: true,
+    links: {
+      githubTool: 'https://github.com/Garblesnarff/storybook-magic-builder',
+      preview: 'imagine-ink.lovable.app',
+      video: '[Demo video link will be added here]'
+    }
   }
 ];
 

@@ -88,6 +88,19 @@ export default {
           border: 'hsl(var(--astral-border))',
           ring: 'hsl(var(--astral-ring))',
         },
+        // Add Imagine Ink colors
+        imagineInk: {
+          'primary': '#6366F1',      // Vibrant blue/purple
+          'primary-light': '#818CF8', // Lighter purple for hover states
+          'primary-dark': '#4F46E5',  // Darker purple
+          'background': '#FFFFFF',    // White background
+          'background-dark': '#111827', // Dark background for dark mode
+          'accent': '#22D3EE',       // Bright cyan accent
+          'text-light': '#F9FAFB',   // Light text
+          'text-dark': '#1F2937',    // Dark text
+          'text-muted': '#6B7280',   // Muted text
+          'border': '#E5E7EB',       // Light border
+        },
       },
       fontFamily: { // Ensure sans and mono are present
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
