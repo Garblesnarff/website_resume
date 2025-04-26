@@ -19,6 +19,7 @@ import { useParams } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { skills } from '../data/skills'; // Import the central skills data
 import SkillItem from '../components/SkillItem'; // Assuming SkillItem is used for skills display
+import inkBackground from '../../public/backgrounds/ink-background.png';
 
 const ProjectDetail: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -94,12 +95,12 @@ const ProjectDetail: React.FC = () => {
     skillTheme = 'astral-audio';
   } else if (isImagineInkProject) { // Add Imagine Ink theme
     // Using sans-serif fonts primarily for this theme
-    containerClasses = "bg-white border border-imagineInk-border rounded-lg shadow-md p-6 md:p-8"; // White bg with border
-    titleClasses = "text-imagineInk-primary font-sans text-3xl"; // Primary color title, sans
-    headingClasses = "text-imagineInk-primary font-sans font-semibold text-2xl"; // Primary color heading, sans
-    textClasses = "text-imagineInk-text-dark font-sans text-base"; // Dark text, sans
-    linkClasses = "text-imagineInk-primary hover:text-imagineInk-primary-light underline font-sans"; // Primary color links, sans
-    strongClasses = "text-imagineInk-text-dark font-semibold font-sans"; // Dark text, sans, semi-bold
+    containerClasses = "bg-white border border-imagineInk-border rounded-lg shadow-md p-6 md:p-8 relative overflow-hidden"; // White bg with border
+    titleClasses = "text-imagineInk-primary font-sans text-3xl relative z-10"; // Primary color title, sans
+    headingClasses = "text-imagineInk-primary font-sans font-semibold text-2xl relative z-10"; // Primary color heading, sans
+    textClasses = "text-imagineInk-text-dark font-sans text-base relative z-10"; // Dark text, sans
+    linkClasses = "text-imagineInk-primary hover:text-imagineInk-primary-light underline font-sans relative z-10"; // Primary color links, sans
+    strongClasses = "text-imagineInk-text-dark font-semibold font-sans relative z-10"; // Dark text, sans, semi-bold
     skillTheme = 'imagine-ink';
   }
 
@@ -107,6 +108,16 @@ const ProjectDetail: React.FC = () => {
   return (
     // Apply container classes conditionally
     <div className={`container mx-auto px-4 ${containerClasses}`}>
+      {isImagineInkProject && (
+        <div 
+          className="absolute inset-0 opacity-40 z-0" 
+          style={{
+            backgroundImage: `url(${inkBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+      )}
       <h1 className={`text-3xl font-bold mb-4 ${titleClasses}`}>{project.title}</h1>
       <p className={`text-lg mb-6 ${textClasses}`}><strong className={strongClasses}>Goal:</strong> {project.goal}</p>
 

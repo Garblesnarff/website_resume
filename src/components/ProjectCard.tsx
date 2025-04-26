@@ -1,6 +1,7 @@
 import { Project } from '../types';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import inkBackground from '../../public/backgrounds/ink-background.png';
 
 interface ProjectCardProps {
   project: Project;
@@ -138,9 +139,17 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
         to={`/projects/${project.id}`}
         id={project.id}
         // Apply Imagine Ink theme: Light background with accent border and shadow
-        className={`card h-full flex flex-col animate-slideUp bg-white border border-imagineInk-border rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group hover:scale-[1.02] ${className || ''}`}
+        className={`card h-full flex flex-col animate-slideUp bg-white border border-imagineInk-border rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group hover:scale-[1.02] relative overflow-hidden ${className || ''}`}
       >
-        <div className="p-5 flex-1"> {/* Using p-5 */}
+        <div 
+          className="absolute inset-0 opacity-25 z-0" 
+          style={{
+            backgroundImage: `url(${inkBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="p-5 flex-1 relative z-10"> {/* Using p-5 */}
           {/* Title: Primary color text, Sans font */}
           <h3 className="text-lg font-sans font-medium text-imagineInk-primary mb-2 group-hover:text-imagineInk-primary-light transition-colors duration-300">{project.title}</h3>
           {/* Goal text: Dark text, Sans font */}
