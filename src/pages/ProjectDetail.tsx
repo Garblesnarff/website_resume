@@ -141,7 +141,7 @@ const ProjectDetail: React.FC = () => {
         <div className="mt-8">
           <h2 className={`text-2xl font-semibold mb-2 ${headingClasses}`}>Links</h2>
           {project.links.githubTool && (
-            <p className={textClasses}><strong className={strongClasses}>GitHub (Tool):</strong> <a href={project.links.githubTool} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.githubTool}</a></p>
+            <p className={textClasses}><strong className={strongClasses}>GitHub:</strong> <a href={project.links.githubTool} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.githubTool}</a></p>
           )}
           {project.links.githubDatabase && (
             <p className={textClasses}><strong className={strongClasses}>GitHub (Database/Website):</strong> <a href={project.links.githubDatabase} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.githubDatabase}</a></p>
