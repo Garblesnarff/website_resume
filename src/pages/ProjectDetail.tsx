@@ -146,8 +146,8 @@ const ProjectDetail: React.FC = () => {
           {project.links.githubDatabase && (
             <p className={textClasses}><strong className={strongClasses}>GitHub (Database/Website):</strong> <a href={project.links.githubDatabase} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.githubDatabase}</a></p>
           )}
-          {project.links.preview && (
-            <p className={textClasses}><strong className={strongClasses}>Project Preview:</strong> <a href={project.links.preview} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.preview}</a></p>
+          {project.links.preview && project.links.preview !== '[Preview link will be added here]' && (
+            <p className={textClasses}><strong className={strongClasses}>Project Preview:</strong> <a href={'https://' + project.links.preview} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.preview}</a></p>
           )}
           {project.links.video && project.links.video !== '[Demo video link will be added here]' && (
             <p className={textClasses}><strong className={strongClasses}>Demo Video:</strong> <a href={project.links.video} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.video}</a></p>

@@ -37,9 +37,9 @@ export const projects: Project[] = [
     ],
     featured: true,
     links: { // Corrected links structure
-      githubTool: '[GitHub Tool link will be added here]',
+      githubTool: 'https://github.com/Garblesnarff/StoryAgent',
       // Removed githubDatabase
-      preview: '[Preview link will be added here]',
+      // Removed preview
       video: '[Demo video link will be added here]'
     }
   },
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     links: { // Corrected links structure
       githubTool: 'https://github.com/Garblesnarff/recipe-galaxy-sync',
       // Removed githubDatabase
-      preview: '[Preview link will be added here]',
+      preview: 'recipe-galaxy-sync.lovable.app',
       video: '[Demo video link will be added here]'
     }
   },
@@ -94,8 +94,8 @@ export const projects: Project[] = [
     ],
     featured: true,
     links: {
-      githubTool: '[GitHub Tool link will be added here]',
-      preview: '[Preview link will be added here]',
+      githubTool: 'https://github.com/Garblesnarff/astral-audio-alchemy',
+      preview: 'astral-audio-alchemy.lovable.app',
       video: '[Demo video link will be added here]'
     }
   }
