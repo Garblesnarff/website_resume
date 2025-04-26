@@ -18,7 +18,7 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
         to={`/projects/${project.id}`} // Make it clickable
         id={project.id} // Add id for potential scrolling
         // Apply Tibetan theme: UPDATED gradient bg, rounded, shadow, transitions, hover scale
-        className="card h-full flex flex-col animate-slideUp bg-gradient-to-br from-tibetan-gold/20 to-tibetan-maroon/15 border border-tibetan-gold/30 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-[1.02]"
+        className={`card h-full flex flex-col animate-slideUp bg-gradient-to-br from-tibetan-gold/20 to-tibetan-maroon/15 border border-tibetan-gold/30 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-[1.02] ${className || ''}`}
       >
         <div className="p-6 flex-1"> {/* Inner content div */}
           {/* Title: Maroon color, Crimson Pro font */}
@@ -48,7 +48,7 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
         to={`/projects/${project.id}`}
         id={project.id}
         // Apply NEW Story Automation theme: purple gradient bg, subtle border/shadow, rounded, transitions, hover scale
-        className="card h-full flex flex-col animate-slideUp bg-gradient-to-br from-storyAutomation-purple-light to-storyAutomation-purple-dark border border-storyAutomation-purple-light/50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02]"
+        className={`card h-full flex flex-col animate-slideUp bg-gradient-to-br from-storyAutomation-purple-light to-storyAutomation-purple-dark border border-storyAutomation-purple-light/50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02] ${className || ''}`}
       >
         <div className="p-5 flex-1"> {/* Using p-5 */}
           {/* Title: Light text, Inter font */}
@@ -78,7 +78,7 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
         to={`/projects/${project.id}`}
         id={project.id}
         // Apply NEW Recipe Scraper theme: white bg, light border, green accents, rounded, transitions, hover scale
-        className="card h-full flex flex-col animate-slideUp bg-recipeScraper-card-bg border border-recipeScraper-border-light rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group hover:scale-[1.02]"
+        className={`card h-full flex flex-col animate-slideUp bg-recipeScraper-card-bg border border-recipeScraper-border-light rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group hover:scale-[1.02] ${className || ''}`}
       >
         <div className="p-5 flex-1"> {/* Using p-5 */}
           {/* Title: Dark text, primary green on hover, Sans font */}
@@ -108,13 +108,13 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
         to={`/projects/${project.id}`}
         id={project.id}
         // Apply NEW Astral Audio theme: dark gradient bg, subtle border, rounded, transitions, hover scale
-        className="card h-full flex flex-col animate-slideUp bg-gradient-to-br from-astralAudio-bg-gradient-start to-astralAudio-bg-gradient-end border border-astralAudio-border rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02]"
+        className={`card h-full flex flex-col animate-slideUp bg-gradient-to-br from-astralAudio-bg-gradient-start to-astralAudio-bg-gradient-end border border-astralAudio-border rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02] ${className || ''}`}
       >
         <div className="p-5 flex-1"> {/* Using p-5 */}
           {/* Title: Light text (foreground), Sans font */}
-          <h3 className="text-lg font-sans font-medium text-astralAudio-foreground mb-2 group-hover:text-astralAudio-primary transition-colors duration-300">{project.title}</h3>
-          {/* Goal text: Muted text, Sans font */}
-          <p className="text-astralAudio-muted mb-4 line-clamp-3 font-sans text-sm">{project.goal}</p>
+          <h3 className="text-lg font-sans font-medium text-astralAudio-primary-foreground mb-2 group-hover:text-astralAudio-primary transition-colors duration-300">{project.title}</h3>
+          {/* Goal text: Improved visibility with foreground color instead of muted */}
+          <p className="text-astralAudio-foreground mb-4 line-clamp-3 font-sans text-sm">{project.goal}</p>
           <div className="flex flex-wrap gap-2">
             {/* Skill tags: Accent text on secondary bg, Sans-serif font */}
             {project.skills.map((skill, index) => (
@@ -138,7 +138,7 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
         to={`/projects/${project.id}`}
         id={project.id}
         // Apply NEW KeyGuardian theme: teal bg, subtle border/shadow, rounded, transitions, hover scale
-        className="card h-full flex flex-col animate-slideUp bg-keyguardian-teal border border-keyguardian-teal/80 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02]"
+        className={`card h-full flex flex-col animate-slideUp bg-keyguardian-teal border border-keyguardian-teal/80 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-[1.02] ${className || ''}`}
       >
         <div className="p-5 flex-1"> {/* Using p-5 (~20px) */}
           {/* Title: White text, Inter font */}
@@ -162,7 +162,7 @@ const ProjectCard = ({ project, variant = 'default', className }: ProjectCardPro
   }
 
   return (
-    <Link to={`/projects/${project.id}`} id={project.id} className="card animate-slideUp block hover:scale-[1.01] transition-transform duration-300"> {/* Added subtle hover scale to default */}
+    <Link to={`/projects/${project.id}`} id={project.id} className={`card animate-slideUp block hover:scale-[1.01] transition-transform duration-300 ${className || ''}`}> {/* Added subtle hover scale to default */}
       <div className="p-8">
         <h3 className="text-2xl font-serif font-bold mb-4">{project.title}</h3> {/* Use font-serif */}
 
