@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/rob-hanson-portfolio/',
+  base: '/website_resume/',
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
