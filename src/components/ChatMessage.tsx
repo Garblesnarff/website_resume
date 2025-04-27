@@ -1,5 +1,6 @@
 import React from 'react';
 import type { ChatMessage } from '../types';
+import { getChatImagePath } from '../config';
 
 interface ChatMessageProps {
   message: ChatMessage;
@@ -38,7 +39,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
     return (
       <div className="w-full flex justify-center py-4 animate-fade-in">
         <img 
-          src={message.imagePath} 
+          src={getChatImagePath(message.imagePath)} 
           alt="Generated visual representation" 
           className="rounded-lg shadow-lg max-w-md max-h-96 object-contain"
         />

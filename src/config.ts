@@ -7,3 +7,8 @@ export function getAssetPath(path: string): string {
   const cleanPath = path.startsWith('/') ? path.substring(1) : path;
   return `${BASE_PATH}${cleanPath}`;
 }
+
+// Helper function for chat images
+export function getChatImagePath(path: string): string {
+  return getAssetPath(path);
+}
