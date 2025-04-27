@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-// Removed direct import of public asset
+import { BASE_PATH } from '../config'; // Import BASE_PATH
 
 const headlines = [
   "Rob Hanson: Building the Future, One Prompt at a Time",
@@ -30,7 +30,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white"
       style={{
-        backgroundImage: `url('/rob-hanson-portfolio/backgrounds/hero-background.png')`, // Use base path for public assets
+        backgroundImage: `url('${BASE_PATH}backgrounds/hero-background.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>

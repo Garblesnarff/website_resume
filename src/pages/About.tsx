@@ -1,5 +1,6 @@
 import { Brain, BookOpen, Heart, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { BASE_PATH } from '../config';
 
 const About = () => {
   return (
@@ -7,7 +8,7 @@ const About = () => {
       <section
       className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
       style={{
-        backgroundImage: `url('/rob-hanson-portfolio/backgrounds/about-background.png')`, // Use base path for public assets
+        backgroundImage: `url('${BASE_PATH}backgrounds/about-background.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
