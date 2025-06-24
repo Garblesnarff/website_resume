@@ -5,8 +5,7 @@ import { projects, auroraProject } from '../data/projects';
 import { auroraChatLog } from '../data/aurora-chat-log'; // Import chat log data
 import ChatLogDisplay from '../components/ChatLogDisplay'; // Import new component
 import { Brain, Code } from 'lucide-react';
-import projectsBackground from '../../public/backgrounds/projects-background.png';
-import auroraBackground from '../../public/backgrounds/aurora-background.png';
+import { BASE_PATH } from '../config';
 
 const Projects = () => {
   const location = useLocation();
@@ -26,10 +25,18 @@ const Projects = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white">
-        <div className="container-custom">
-          <h1 className="mb-6 text-white text-center">My AI-Orchestrated Projects</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-200">
+      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white relative overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 opacity-80" 
+          style={{
+            backgroundImage: `url('${BASE_PATH}backgrounds/project-header.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="container-custom relative z-10">
+          <h1 className="mb-6 text-primary-300 text-center font-serif">My AI-Orchestrated Projects</h1>
+          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
             These projects showcase my "AI Orchestration" methodology, where I direct AI to build complex systems through strategic prompting, iterative refinement, and tool integration.
           </p>
         </div>
@@ -39,7 +46,7 @@ const Projects = () => {
         <div 
           className="container-custom py-12"
           style={{
-            backgroundImage: `url(${projectsBackground})`,
+            backgroundImage: `url('${BASE_PATH}backgrounds/projects-background.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
@@ -47,7 +54,7 @@ const Projects = () => {
           <div className="grid gap-10">
             {projects.map((project) => {
               // Update variant type to include 'story-automation', 'recipe-scraper', and 'astral-audio'
-              let variant: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' = 'default';
+              let variant: 'default' | 'tibetan' | 'keyguardian' | 'story-automation' | 'recipe-scraper' | 'astral-audio' | 'imagine-ink' = 'default';
               if (project.id === 'tibetan-translation') {
                 variant = 'tibetan';
               } else if (project.id === 'story-automation') { // Add condition for story-automation
@@ -58,6 +65,8 @@ const Projects = () => {
                 variant = 'keyguardian'; // Corrected variant assignment
               } else if (project.id === 'astral-audio') { // Add condition for astral-audio
                 variant = 'astral-audio';
+              } else if (project.id === 'imagine-ink') { // Add condition for imagine-ink
+                variant = 'imagine-ink';
               }
               return <ProjectCard key={project.id} project={project} variant={variant} />;
             })}
@@ -69,7 +78,7 @@ const Projects = () => {
         <div 
           className="container-custom"
           style={{
-            backgroundImage: `url(${auroraBackground})`,
+            backgroundImage: `url('${BASE_PATH}backgrounds/aurora-background.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',

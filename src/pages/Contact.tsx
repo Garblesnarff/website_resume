@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Send, Mail, MessageSquare } from 'lucide-react';
+// Removed direct import of public asset
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -43,10 +44,18 @@ const Contact = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white">
-        <div className="container-custom">
-          <h1 className="mb-6 text-white text-center">Contact Me</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-200">
+      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white relative overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 opacity-80" 
+          style={{
+            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/contact-header.png')`, // Use base path for public assets
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="container-custom relative z-10">
+          <h1 className="mb-6 text-primary-300 text-center font-serif">Contact Me</h1>
+          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
             Interested in discussing AI alignment, behavior analysis, or potential collaboration? I'd love to hear from you.
           </p>
         </div>

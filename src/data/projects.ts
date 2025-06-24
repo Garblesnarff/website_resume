@@ -35,11 +35,11 @@ export const projects: Project[] = [
       'Directing AI for Application Development', 
       'Complex Workflow Design'
     ],
-    featured: true,
+    featured: false, // Change from true to false
     links: { // Corrected links structure
-      githubTool: '[GitHub Tool link will be added here]',
+      githubTool: 'https://github.com/Garblesnarff/StoryAgent',
       // Removed githubDatabase
-      preview: '[Preview link will be added here]',
+      // Removed preview
       video: '[Demo video link will be added here]'
     }
   },
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     links: { // Corrected links structure
       githubTool: 'https://github.com/Garblesnarff/recipe-galaxy-sync',
       // Removed githubDatabase
-      preview: '[Preview link will be added here]',
+      preview: 'recipe-galaxy-sync.lovable.app',
       video: '[Demo video link will be added here]'
     }
   },
@@ -94,8 +94,29 @@ export const projects: Project[] = [
     ],
     featured: true,
     links: {
-      githubTool: '[GitHub Tool link will be added here]',
-      preview: '[Preview link will be added here]',
+      githubTool: 'https://github.com/Garblesnarff/astral-audio-alchemy',
+      preview: 'astral-audio-alchemy.lovable.app',
+      video: '[Demo video link will be added here]'
+    }
+  },
+  {
+    id: 'imagine-ink',
+    title: 'Imagine Ink',
+    goal: 'Create AI-powered children\'s storybooks with personalized stories and illustrations.',
+    process: 'Developed a seamless interface integrating AI storytelling with image generation to bring stories to life. Built customizable page layouts, easy editing tools, and export functionality to create delightful children\'s storybooks.',
+    outcome: 'A comprehensive platform that empowers users without artistic or design skills to create magical, visually compelling stories efficiently with AI assistance.',
+    skills: [
+      'UI/UX Design',
+      'React Development',
+      'AI Image Integration',
+      'Tailwind CSS',
+      'User-Centered Design',
+      'Responsive Web Development'
+    ],
+    featured: true,
+    links: {
+      githubTool: 'https://github.com/Garblesnarff/storybook-magic-builder',
+      preview: 'imagine-ink.lovable.app',
       video: '[Demo video link will be added here]'
     }
   }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroBackground from '../../public/backgrounds/hero-background.png';
+import { BASE_PATH } from '../config'; // Import BASE_PATH
 
 const headlines = [
   "Rob Hanson: Building the Future, One Prompt at a Time",
@@ -30,7 +30,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white"
       style={{
-        backgroundImage: `url(${heroBackground})`,
+        backgroundImage: `url('${BASE_PATH}backgrounds/hero-background.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 
-            className={`mb-6 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`mb-6 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'} text-primary-300`}
           >
             {headlines[currentHeadline]}
           </h1>

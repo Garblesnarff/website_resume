@@ -14,10 +14,11 @@ const FeaturedProjects = () => {
           </p>
         </div>
 
-        {/* Modified grid layout to center the last card */}
-        <div className="grid md:grid-cols-2 gap-8 justify-items-center">
+        {/* Grid layout with proper centering for the last card */}
+        <div className="grid md:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => {
-            let variant = 'default';
+            // Explicitly type the variant to match the expected prop type subset
+            let variant: "default" | "tibetan" | "keyguardian" | "story-automation" | "recipe-scraper" | "astral-audio" | "imagine-ink" = 'default';
             if (project.id === 'tibetan-translation') {
               variant = 'tibetan';
             } else if (project.id === 'story-automation') {
@@ -28,13 +29,24 @@ const FeaturedProjects = () => {
               variant = 'recipe-scraper';
             } else if (project.id === 'astral-audio') {
               variant = 'astral-audio';
+            } else if (project.id === 'imagine-ink') {
+              variant = 'imagine-ink';
             }
 
-            // Apply col-span-2 to the last card on medium screens and up
+            // Check if it's the last card and if we have an odd number of featured projects
             const isLastCard = index === featuredProjects.length - 1;
-            const cardClasses = isLastCard ? 'md:col-span-2' : '';
+            const hasOddNumberOfProjects = featuredProjects.length % 2 === 1;
+            
+            // Only apply special styling if it's the last card in an odd-numbered set
+            const cardWrapperClasses = isLastCard && hasOddNumberOfProjects 
+              ? 'md:col-span-2 md:mx-auto md:max-w-xl' 
+              : '';
 
-            return <ProjectCard key={project.id} project={project} variant={variant} className={cardClasses} />;
+            return (
+              <div key={project.id} className={cardWrapperClasses}>
+                <ProjectCard project={project} variant={variant} />
+              </div>
+            );
           })}
         </div>
 

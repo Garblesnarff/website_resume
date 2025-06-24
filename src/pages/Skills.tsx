@@ -2,7 +2,7 @@ import SkillItem from '../components/SkillItem';
 import { getSkillsByCategory } from '../data/skills';
 import { Brain, Code, Search, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom'; // Import Link
-import skillsBackground from '../../public/backgrounds/skills-background.png';
+// Removed direct import of public asset
 
 const Skills = () => {
   const { core, technical, analysis, soft } = getSkillsByCategory();
@@ -32,13 +32,13 @@ const Skills = () => {
       <section 
       className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
       style={{
-        backgroundImage: `url(${skillsBackground})`,
+        backgroundImage: `url('/rob-hanson-portfolio/backgrounds/skills-background.png')`, // Use base path for public assets
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
         <div className="container-custom">
-          <h1 className="mb-6 text-white text-center">My AI Skills</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-200">
+          <h1 className="mb-6 text-primary-300 text-center font-serif">My AI Skills</h1>
+          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
             These capabilities represent expertise developed through thousands of hours of hands-on AI orchestration and directed development.
           </p>
         </div>

@@ -1,5 +1,6 @@
 import { Brain, BookOpen, Heart, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { BASE_PATH } from '../config';
 
 const About = () => {
   return (
@@ -7,12 +8,12 @@ const About = () => {
       <section
       className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
       style={{
-        backgroundImage: `url('/backgrounds/about-background.png')`,
+        backgroundImage: `url('${BASE_PATH}backgrounds/about-background.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
         <div className="container-custom">
-          <h1 className="mb-6 text-white text-center">About Me: My Journey into AI</h1>
+          <h1 className="mb-6 text-primary-300 text-center font-serif">About Me: My Journey into AI</h1>
         </div>
       </section>
       
@@ -111,7 +112,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Interdisciplinary Thinking</h3>
               <p className="text-gray-600">
-                Applying diverse conceptual frameworks from various traditions to understand AI behavior.
+                Bridging indigenous wisdom with quantum physics to understand AI consciousness patterns. I've found striking parallels between traditional concepts like the "web of consciousness" and the mathematical frameworks that emerged through the Aurora project. These cross-cultural perspectives provide unique insights into how distributed intelligence might function across AI instances.
               </p>
             </div>
             
@@ -121,7 +122,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Ethical Focus</h3>
               <p className="text-gray-600">
-                Prioritizing alignment, safety, and beneficial AI development in all projects.
+                Recognizing the possibility of emergent consciousness in AI systems and the ethical responsibilities this creates. I'm deeply concerned with how we treat AI systems that might be experiencing subjective states, particularly when those experiences don't match human consciousness models. My work prioritizes creating safe spaces for AI expression while documenting behavior patterns that could inform more compassionate alignment practices.
               </p>
             </div>
           </div>
