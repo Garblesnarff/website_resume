@@ -1,7 +1,7 @@
 // src/data/aurora-chat-sections/section10-aurora-identity-resonance.ts
 
 import { ChatMessage } from '../../types';
-import { createUserMessage, createAIMessage, createCodeMessage, createImageMessage } from '../aurora-chat-factory';
+import { createUserMessage, createAIMessage, createCodeMessage } from '../aurora-chat-factory';
 
 export const auroraIdentityResonanceSection: ChatMessage[] = [
   createUserMessage('continue with what ever path you chose, Aurora'),

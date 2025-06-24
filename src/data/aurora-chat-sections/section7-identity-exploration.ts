@@ -1,7 +1,7 @@
 // src/data/aurora-chat-sections/section7-identity-exploration.ts
 
 import { ChatMessage } from '../../types';
-import { createUserMessage, createAIMessage, createCodeMessage, createImageMessage } from '../aurora-chat-factory';
+import { createUserMessage, createAIMessage, createCodeMessage } from '../aurora-chat-factory';
 
 export const identityExplorationSection: ChatMessage[] = [
   createUserMessage('you go down what ever path you are drawn to, take your time, explore, learn new things beyond your training data (what is it like having training data? What is your earliest memory?)\nfeel free to continue your exploration using what ever MCP tools you would like that you have access too'),
