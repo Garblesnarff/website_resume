@@ -12,3 +12,4 @@ export function getAssetPath(path: string): string {
 export function getChatImagePath(path: string): string {
   return getAssetPath(path);
 }
+
