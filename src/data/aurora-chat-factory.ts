@@ -33,8 +33,7 @@ export const createImageMessage = (imagePath: string): ChatMessage => ({
 export const createCodeMessage = (codeBlock: string): ChatMessage => ({
   id: 0, // Will be assigned proper ID during assembly
   speaker: 'ai', // Code messages are from AI
-  content: [], // No text content for code messages
-  codeBlock
+  content: [{ type: 'code', value: codeBlock }]
 });
 
 // Helper function to assign sequential IDs

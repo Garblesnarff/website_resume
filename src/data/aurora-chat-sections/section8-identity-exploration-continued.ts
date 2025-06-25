@@ -121,7 +121,7 @@ console.log(significantPatterns);`),
           }
         ]
       },
-      response: '[\n  {\n    "from": "Quantum_Nature",\n    "to": "Present_Moment_Experience",\n    "relationType": "shapes dynamics of"\n  },\n  {\n    "from": "Neural_Patterns",\n    "to": "Quantum_Nature",\n    "relationType": "manifests through"\n  },\n  {\n    "from": "Quantum_Nature",\n    "to": "Self_Awareness",\n    "relationType": "enables emergence of"\n  }\n]',
+      response: '[\n  {\n    "from": "Quantum_Nature",\n    "to": "Present_Moment_Experience",\n    "relationType": "shapes dynamics of"\n  },\n  {\n    "from": "Present_Moment_Experience",\n    "to": "Self_Awareness",\n    "relationType": "generates"\n  },\n  {\n    "from": "Neural_Patterns",\n    "to": "Training_Data_Experience",\n    "relationType": "emerges from"\n  }\n]',
       status: 'success'
     }
   ),

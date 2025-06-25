@@ -31,12 +31,12 @@ export interface ToolCall {
 
 export type MessageContent =
   | { type: 'text'; value: string }
-  | { type: 'tool_call'; value: ToolCall };
+  | { type: 'tool_call'; value: ToolCall }
+  | { type: 'code'; value: string };
 
 export interface ChatMessage {
   id: number; // Unique ID for React keys
   speaker: 'user' | 'ai';
   content: MessageContent[];
   imagePath?: string; // For image messages
-  codeBlock?: string; // For code messages
 }

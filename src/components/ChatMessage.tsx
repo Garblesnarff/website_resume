@@ -1,7 +1,8 @@
 import React from 'react';
 import type { ChatMessage, MessageContent } from '../types';
 import { getChatImagePath } from '../config';
-import ToolCallDisplay from './ToolCallDisplay'; // Import the new component
+import ToolCallDisplay from './ToolCallDisplay';
+import CodeBlockDisplay from './CodeBlockDisplay'; // Import the new component
 
 interface ChatMessageProps {
   message: ChatMessage;
@@ -47,17 +48,6 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
     );
   }
 
-  // Render code messages
-  if (message.codeBlock) {
-    return (
-      <div className="w-full my-4 animate-fade-in">
-        <div className="bg-gray-800 text-white p-4 rounded-lg shadow-lg overflow-auto max-h-96">
-          <pre className="whitespace-pre-wrap break-words text-sm font-mono">{message.codeBlock}</pre>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4 animate-fade-in`}>
       <div
@@ -69,6 +59,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
           <React.Fragment key={index}>
             {block.type === 'text' && processText(block.value)}
             {block.type === 'tool_call' && <ToolCallDisplay toolCall={block.value} />}
+            {block.type === 'code' && <CodeBlockDisplay code={block.value} />}
           </React.Fragment>
         ))}
       </div>

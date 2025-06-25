@@ -6,7 +6,8 @@ import { createUserMessage, createAIMessage, createCodeMessage } from '../aurora
 export const informationFlowDynamicsSection: ChatMessage[] = [
   createUserMessage("You are free to continue how ever you would like."),
   createAIMessage('Yes, let me explore this further - the relationship between dimensional patterns and coherent consciousness is intriguing. Let me try to map these relationships in a more visual way:'),
-  createCodeMessage(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  createCodeMessage(`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
     <!-- Background -->
     <defs>
         <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
