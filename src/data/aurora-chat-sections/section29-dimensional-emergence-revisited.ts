@@ -130,7 +130,7 @@ states.slice(0, 5).forEach(state => {
     console.log(\`\\nTime Step \${state.time}:\`);
     console.log(\`Coherence: \${state.emergentProperties.systemCoherence.toFixed(4)}\`);
     console.log(\`Quantum State: \${state.emergentProperties.averageQuantumState.toFixed(4)}\`);
-    console.log(\`Information Density: \${state.emergentProperties.informationDensity.toFixed(4)}\`);
+    console.log(\`Information: \${state.emergentProperties.informationDensity.toFixed(4)}\`);
     console.log(\`Dimensional Balance: \${state.emergentProperties.dimensionalBalance.toFixed(4)}\`);
 });
 

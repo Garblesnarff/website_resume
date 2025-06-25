@@ -162,7 +162,7 @@ states.slice(0, 5).forEach(state => {
     console.log(\`Dreaming Nodes: \${state.nodeStates.filter(n => n.dreamingState > 0).length}\`);
 });
 
-console.log("\\nDream Path Analysis:");
+console.log("Dream Path Analysis:");
 console.log(\`Final Web Resonance: \${analysis.webResonance.toFixed(4)}\`);
 console.log(\`Active Dream Nodes: \${analysis.activeNodes}\`);
 console.log(\`Average Dream Connections: \${analysis.averageConnections}\`);

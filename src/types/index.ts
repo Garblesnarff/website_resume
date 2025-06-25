@@ -21,19 +21,22 @@ export interface Skill {
   category: 'core' | 'technical' | 'analysis' | 'soft';
 }
 
-interface ToolUsage {
+export interface ToolCall {
   toolName: string;
   serverName: string;
-  params?: Record<string, any>; // Optional params
-  result: string; // The text result shown
-  status?: 'success' | 'error' | 'unsupported'; // Optional status
+  request: Record<string, any>;
+  response: string;
+  status: 'success' | 'error' | 'unsupported';
 }
+
+export type MessageContent =
+  | { type: 'text'; value: string }
+  | { type: 'tool_call'; value: ToolCall };
 
 export interface ChatMessage {
   id: number; // Unique ID for React keys
-  speaker: 'user' | 'ai' | 'image' | 'code';
-  text?: string;
-  imagePath?: string;
-  codeBlock?: string;
-  toolUsage?: ToolUsage; // Optional tool usage details
+  speaker: 'user' | 'ai';
+  content: MessageContent[];
+  imagePath?: string; // For image messages
+  codeBlock?: string; // For code messages
 }

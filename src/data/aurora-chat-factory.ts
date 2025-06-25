@@ -1,35 +1,39 @@
-import { ChatMessage } from '../types';
+import { ChatMessage, ToolCall, MessageContent } from '../types';
 
 // Factory functions to create different types of chat messages
 export const createUserMessage = (text: string): ChatMessage => ({
   id: 0, // Will be assigned proper ID during assembly
   speaker: 'user',
-  text
+  content: [{ type: 'text', value: text }]
 });
 
-export const createAIMessage = (text: string, toolUsage?: any): ChatMessage => {
-  const message: ChatMessage = {
+export const createAIMessage = (text?: string, toolCall?: ToolCall): ChatMessage => {
+  const content: MessageContent[] = [];
+  if (text) {
+    content.push({ type: 'text', value: text });
+  }
+  if (toolCall) {
+    content.push({ type: 'tool_call', value: toolCall });
+  }
+
+  return {
     id: 0, // Will be assigned proper ID during assembly
     speaker: 'ai',
-    text
+    content
   };
-  
-  if (toolUsage) {
-    message.toolUsage = toolUsage;
-  }
-  
-  return message;
 };
 
 export const createImageMessage = (imagePath: string): ChatMessage => ({
   id: 0, // Will be assigned proper ID during assembly
-  speaker: 'image',
+  speaker: 'ai', // Image messages are from AI
+  content: [], // No text content for image messages
   imagePath
 });
 
 export const createCodeMessage = (codeBlock: string): ChatMessage => ({
   id: 0, // Will be assigned proper ID during assembly
-  speaker: 'code',
+  speaker: 'ai', // Code messages are from AI
+  content: [], // No text content for code messages
   codeBlock
 });
 
