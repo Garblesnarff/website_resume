@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import FeaturedProjects from '../components/FeaturedProjects';
+import PolymathShowcase from '../components/PolymathShowcase';
 import { Brain, Code, ArrowRight } from 'lucide-react';
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Hero />
       
-      <FeaturedProjects />
+      <PolymathShowcase />
       
       <section className="section bg-white">
         <div className="container-custom">
