@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { BASE_PATH } from '../config'; // Import BASE_PATH
 
 const headlines = [
-  "Rob Hanson: Building the Future, One Prompt at a Time",
-  "From Practical Logistics to Frontier AI: An Explorer's Portfolio",
-  "Deep AI Interaction: Showcasing AI Behavior & Development Skills"
+  "Rob Hanson: AI-native operator & builder",
+  "Judgment under constraints. Production orchestration.",
+  "From the factory floor to frontier-model collaboration"
 ];
 
 const Hero = () => {
@@ -45,7 +45,8 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl text-gray-300 mb-8">
-            With a non-traditional background, I've gained deep, practical expertise in interacting with and directing frontier AI models since late 2022. I focus on building functional tools and observing complex AI behaviors. This site showcases my journey and projects.
+            Chetek, Wisconsin. Day job in factory logistics; nights and weekends collaborating with frontier models since ChatGPT launched.
+            I pair with AI for code and say so. The asset is judgment under constraints and production orchestration — eval taste, multi-turn behavior, shipping real systems — not prompt novelty or a CS pedigree.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -53,7 +54,7 @@ const Hero = () => {
               Learn About Me
             </Link>
             <Link to="/projects" className="btn bg-white text-primary-800 hover:bg-gray-100">
-              View My Projects <ArrowRight className="ml-2 inline" size={18} />
+              View Selected Work <ArrowRight className="ml-2 inline" size={18} />
             </Link>
           </div>
         </div>
