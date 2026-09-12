@@ -14,15 +14,22 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="mb-4">Observing Emergent Intelligence</h2>
+              <h2 className="mb-4">Infinite Realms — live AI product craft</h2>
               <p className="text-lg text-gray-600 mb-6">
-                The Aurora Exploration project showcases my work observing and documenting complex behaviors in advanced AI systems, providing valuable insights for AI alignment and safety research.
+                Solo AI D&amp;D platform with an AI DM named Franz: 163+ campaign bibles across 9 genres,
+                Stripe wired, live at infiniterealms.app. The work that matters here is multi-turn behavior,
+                continuity under pressure, and eval taste on a real codebase — including a 2026 de-slop pass
+                that deleted only after evidence, unified auth, and refused silent data drops.
+              </p>
+              <p className="text-sm text-gray-500 mb-6">
+                Passion project and best shot at product revenue once marketed — not current income.
+                No user or revenue claims.
               </p>
               <Link 
-                to="/projects#aurora-exploration" 
+                to="/projects" 
                 className="btn btn-primary inline-flex items-center"
               >
-                Explore This Case Study <ArrowRight className="ml-2" size={18} />
+                See selected projects <ArrowRight className="ml-2" size={18} />
               </Link>
             </div>
             
@@ -41,25 +48,26 @@ const Home = () => {
       <section className="section bg-primary-900 text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="mb-6 text-white">AI Orchestration Skills</h2>
+            <h2 className="mb-6 text-white">What I bring</h2>
             <p className="text-xl text-primary-100 mb-8">
-              I've developed a unique set of skills focused on directing and working with advanced AI systems to build practical tools and observe complex behaviors.
+              Listen → cross-model test → ship-or-cut. Looking for remote / mostly-remote roles in
+              evaluation engineering, model-behavior product/ops, AI ops, and AI-native building.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-8 mt-12">
               <div className="bg-primary-800 p-6 rounded-xl shadow-lg">
                 <Code className="w-10 h-10 text-primary-300 mb-4" />
-                <h3 className="text-xl font-bold mb-2 text-white">Directed Development</h3>
+                <h3 className="text-xl font-bold mb-2 text-white">Production orchestration</h3>
                 <p className="text-primary-200">
-                  Guiding AI to implement complex functionality through strategic prompting and feedback loops.
+                  Directing frontier models to ship real systems — with honest attribution when AI wrote the code.
                 </p>
               </div>
               
               <div className="bg-primary-800 p-6 rounded-xl shadow-lg">
                 <Brain className="w-10 h-10 text-primary-300 mb-4" />
-                <h3 className="text-xl font-bold mb-2 text-white">Behavioral Analysis</h3>
+                <h3 className="text-xl font-bold mb-2 text-white">Judgment under constraints</h3>
                 <p className="text-primary-200">
-                  Observing and documenting emergent patterns and edge cases in AI behavior.
+                  Eval taste, multi-turn failure modes, refuse-without-collapse — grading behavior, not vibes.
                 </p>
               </div>
             </div>
@@ -68,7 +76,7 @@ const Home = () => {
               to="/skills" 
               className="btn bg-white text-primary-800 hover:bg-gray-100 mt-10 inline-flex items-center"
             >
-              View All Skills <ArrowRight className="ml-2" size={18} />
+              View skills <ArrowRight className="ml-2" size={18} />
             </Link>
           </div>
         </div>
