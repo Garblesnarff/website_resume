@@ -2,81 +2,69 @@ import { Skill } from '../types';
 
 export const skills: Skill[] = [
   {
+    id: 'judgment',
+    name: 'Judgment under constraints',
+    description: 'Grading multi-turn model behavior, refuse-without-collapse, continuity under pressure, and eval design — including cleanup passes that require evidence before cutting code or data.',
+    category: 'core'
+  },
+  {
+    id: 'orchestration',
+    name: 'Production orchestration with AI',
+    description: 'Running listen → cross-model test → ship-or-cut loops to build and operate real systems (apps, pipelines, content) with frontier models as collaborators.',
+    category: 'core'
+  },
+  {
     id: 'learning',
-    name: 'Self-Directed Learning & Continuous Engagement with AI Research',
-    description: "I'm constantly absorbing AI content - tech podcasts during my entire 8-hour factory shifts, then experimenting with different AI models when I get home. I use AI like a partner rather than just a tool. Most people in rural Wisconsin have barely heard of this stuff, but I've been diving deep since day one of ChatGPT.",
+    name: 'Self-directed learning at volume',
+    description: 'Factory/commute AI podcasts plus nightly experimentation across Claude, Gemini, and Grok since ChatGPT launched. Historically 100+ AI messages/day.',
     category: 'soft'
   },
   {
     id: 'workflow-design',
-    name: 'Iterative AI Workflow Design & Refinement',
+    name: 'Iterative AI workflow design & refinement',
     description: 'Creating and optimizing processes that leverage AI capabilities to achieve specific outcomes.',
     category: 'core'
   },
   {
     id: 'debugging',
-    name: 'Conversational Debugging & Error Identification in AI Outputs',
-    description: 'Diagnosing and correcting issues in AI-generated content through targeted conversation.',
+    name: 'Conversational debugging',
+    description: 'Diagnosing and correcting issues in AI-generated systems through targeted conversation and verification.',
     category: 'technical'
   },
   {
     id: 'behavior-eval',
-    name: 'Evaluating AI System Behavior (Subtle & Edge Cases)',
-    description: 'Identifying and analyzing unexpected or emergent behaviors in AI systems, particularly in boundary conditions.',
+    name: 'Evaluating AI system behavior',
+    description: 'Identifying subtle and edge-case behaviors — especially multi-turn / agentic settings relevant to safety evals.',
     category: 'analysis'
   },
   {
     id: 'multi-modal',
-    name: 'Multi-Modal AI Integration (Text, Audio, Image via AI)',
-    description: 'Coordinating AI systems to work across different media types for comprehensive outputs.',
+    name: 'Multi-modal AI integration',
+    description: 'Coordinating text, audio, and image generation pipelines via AI-assisted development.',
     category: 'technical'
   },
   {
     id: 'tool-integration',
-    name: 'Tool Integration & Orchestration via AI',
-    description: 'Directing AI to properly utilize and integrate external tools and APIs.',
-    category: 'technical'
-  },
-  {
-    id: 'tech-literacy',
-    name: 'Practical Technical Literacy',
-    description: 'Understanding of basic coding concepts, identifying/resolving simple syntax/dependency errors.',
+    name: 'Tool & API orchestration via AI',
+    description: 'Directing AI to integrate external tools and APIs into working products.',
     category: 'technical'
   },
   {
     id: 'prompt-engineering',
-    name: 'Advanced Prompt Engineering & Strategy',
-    description: 'Crafting sophisticated prompts that elicit specific, high-quality outputs from AI systems.',
+    name: 'Advanced prompting & strategy',
+    description: 'Crafting prompts, rubrics, and harnesses until output matches intent — and cutting scope when it does not.',
     category: 'core'
   },
   {
-    id: 'conceptual-modeling',
-    name: 'Conceptual Modeling (AI-assisted)',
-    description: 'Creating abstract representations of complex ideas with AI assistance.',
-    category: 'analysis'
-  },
-  {
-    id: 'data-management',
-    name: 'Data Extraction, Structuring, & Management (AI-assisted)',
-    description: 'Using AI to organize and manipulate data for specific purposes.',
-    category: 'technical'
-  },
-  {
-    id: 'problem-solving',
-    name: 'Problem Solving with AI',
-    description: 'Approaching challenges strategically using AI as a tool and collaborator.',
-    category: 'core'
-  },
-  {
-    id: 'documentation',
-    name: 'Observing & Documenting Complex AI Phenomena',
-    description: 'Recording and analyzing notable AI behaviors and patterns.',
-    category: 'analysis'
+    id: 'attribution',
+    name: 'Honest attribution',
+    description: 'Separating decisions I made from artifacts AI generated — corrects inflated "you built X" claims.',
+    category: 'soft'
   },
   {
     id: 'ethics',
-    name: 'Awareness of AI Safety & Ethical Considerations',
-    description: 'Understanding the importance of responsible AI development and potential risks.',
+    name: 'AI safety & ethical awareness',
+    description: 'Follows Anthropic/safety discourse seriously (Constitution, RSP, eval culture) and builds for a positive future for family.',
     category: 'soft'
   }
 ];
