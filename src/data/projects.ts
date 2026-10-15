@@ -2,11 +2,30 @@ import { Project } from '../types';
 
 export const projects: Project[] = [
   {
+    id: 'infinite-realms',
+    title: 'Infinite Realms',
+    goal: 'AI Dungeon Master web app for solo tabletop RPGs. Live at infiniterealms.app with Stripe payments.',
+    process: 'I set direction, design the evals and make the judgment calls; AI agents write most of the code.',
+    outcome: '2,600+ GitHub issues and PRs; release 0.30.x; a playtest gate that runs Monte Carlo combat simulations and walkthroughs from each campaign\'s text against pass thresholds before a campaign ships.',
+    skills: [
+      'AI Agent Orchestration',
+      'Eval Design',
+      'AI-Directed Full-Stack Development',
+      'Game Systems Design',
+      'Production Web Apps'
+    ],
+    featured: true,
+    links: {
+      githubTool: 'https://github.com/Garblesnarff/infinite-realms-app',
+      preview: 'infiniterealms.app'
+    }
+  },
+  {
     id: 'tibetan-translation',
     title: 'Ancient Tibetan Text Translation Pipeline & Database',
     goal: 'Automate translation of multi-page historical Tibetan texts from PDFs and create an online database.',
     process: 'Orchestrated AI to handle PDF text extraction, perform page-by-page translation (required extensive iteration over 300+ messages to maintain context and accuracy), and generate the code for the database website structure and functionality. Focused on iterative refinement to correct translation errors and formatting issues.',
-    outcome: 'A functional tool capable of translating hundreds of pages of Tibetan scripts into 600+ pages of English. A companion website acting as a database for these translations.',
+    outcome: 'A functional tool capable of translating hundreds of pages of Tibetan scripts. So far: 838 of 1,223 Sakya archive texts translated. A companion website acts as a database for these translations.',
     skills: [
       'AI Workflow Design', 
       'Large-Scale Text Processing via AI', 
@@ -20,6 +39,23 @@ export const projects: Project[] = [
       githubDatabase: 'https://github.com/Garblesnarff/tibetan-texts-grove',
       preview: 'https://preview--tibetan-texts-grove.lovable.app/',
       video: '[Demo video link will be added here]' // Placeholder for video link
+    }
+  },
+  {
+    id: 'mcp-servers',
+    title: 'Open-source MCP servers',
+    goal: 'Open-source, MIT-licensed MCP (Model Context Protocol) servers: gemini-mcp-server and google-maps-mcp.',
+    process: 'Published gemini-mcp-server and google-maps-mcp so AI models can call the Gemini API and Google Maps through the Model Context Protocol.',
+    outcome: 'Both servers are MIT licensed and available as open-source repos on GitHub.',
+    skills: [
+      'Model Context Protocol',
+      'Open Source',
+      'API Integration'
+    ],
+    featured: false,
+    links: {
+      githubTool: 'https://github.com/Garblesnarff/gemini-mcp-server',
+      githubRepo2: 'https://github.com/Garblesnarff/google-maps-mcp'
     }
   },
   {

@@ -8,6 +8,7 @@ export interface Project {
   featured?: boolean;
   links?: { // Add optional links property
     githubTool?: string;
+    githubRepo2?: string;
     githubDatabase?: string;
     preview?: string;
     video?: string;

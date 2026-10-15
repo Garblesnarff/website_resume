@@ -165,6 +165,9 @@ const ProjectDetail: React.FC = () => {
           {project.links.githubTool && (
             <p className={textClasses}><strong className={strongClasses}>GitHub:</strong> <a href={project.links.githubTool} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.githubTool}</a></p>
           )}
+          {project.links.githubRepo2 && (
+            <p className={textClasses}><strong className={strongClasses}>GitHub:</strong> <a href={project.links.githubRepo2} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.githubRepo2}</a></p>
+          )}
           {project.links.githubDatabase && (
             <p className={textClasses}><strong className={strongClasses}>GitHub (Database/Website):</strong> <a href={project.links.githubDatabase} target="_blank" rel="noopener noreferrer" className={linkClasses}>{project.links.githubDatabase}</a></p>
           )}
