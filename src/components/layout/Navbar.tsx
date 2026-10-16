@@ -20,16 +20,22 @@ export const Wordmark = ({ className = '' }: { className?: string }) => (
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [overStory, setOverStory] = useState(false);
   const { pathname } = useLocation();
+  const isHome = pathname === '/';
 
   useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      const story = document.getElementById('story');
+      setOverStory(Boolean(story) && window.scrollY < (story?.offsetHeight ?? 0) - window.innerHeight * 0.6);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [pathname]);
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `relative font-ui text-[1.1rem] font-bold tracking-wide transition-colors ${
@@ -40,8 +46,16 @@ const Navbar = () => {
 
   return (
     <header
-      className={`grain sticky top-0 z-50 text-birch transition-[background-color,box-shadow] duration-300 ${
-        scrolled || open ? 'bg-night/95 shadow-[0_1px_0_rgb(var(--night-line))] backdrop-blur' : 'bg-night'
+      className={`top-0 z-50 text-birch transition-[background-color,box-shadow] duration-500 ${
+        isHome ? 'fixed inset-x-0' : 'grain sticky'
+      } ${
+        open
+          ? 'bg-night'
+          : isHome && overStory
+            ? 'bg-gradient-to-b from-night/70 to-transparent'
+            : scrolled || isHome
+              ? 'bg-night/95 shadow-[0_1px_0_rgb(var(--night-line))] backdrop-blur'
+              : 'bg-night'
       }`}
     >
       <div className="wrap flex h-16 items-center justify-between">

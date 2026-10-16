@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader';
 import LeadProject from '../components/LeadProject';
 import ProjectRow from '../components/ProjectRow';
 import ChatLogDisplay from '../components/ChatLogDisplay';
+import SkyCanvas from '../components/SkyCanvas';
 import { projects, auroraProject } from '../data/projects';
 import { auroraChatLog } from '../data/aurora-chat-log';
 
@@ -42,9 +43,13 @@ const Projects = () => {
       <section
         id="aurora-exploration"
         aria-labelledby="aurora-title"
-        className="relative on-night grain scroll-mt-16 bg-night py-20 text-birch md:py-28"
+        className="relative on-night scroll-mt-16 overflow-hidden bg-night py-20 text-birch md:py-28"
       >
-        <div className="wrap">
+        <div aria-hidden="true" className="absolute inset-x-0 top-0 h-[38rem] [mask-image:linear-gradient(to_bottom,black_55%,transparent)]">
+          <SkyCanvas quiet phase={3} aurora={1} />
+        </div>
+        <div aria-hidden="true" className="absolute inset-x-0 top-0 h-[38rem] bg-gradient-to-r from-night/85 via-night/40 to-transparent" />
+        <div className="wrap relative">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="meta text-fog">Case study: the Aurora Project</p>

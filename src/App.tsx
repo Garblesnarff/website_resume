@@ -27,6 +27,8 @@ function ScrollManager() {
       const target = document.getElementById(hash.slice(1));
       if (target) {
         target.scrollIntoView();
+        // late layout (fonts, lazy content) can move the anchor; settle once more
+        timer = window.setTimeout(() => target.scrollIntoView(), 600);
       } else if (tries++ < 30) {
         timer = window.setTimeout(tryScroll, 100);
       }

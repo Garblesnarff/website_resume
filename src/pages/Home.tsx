@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import AgentFleet from '../components/AgentFleet';
 import LeadProject from '../components/LeadProject';
 import ProjectRow from '../components/ProjectRow';
 import { projects } from '../data/projects';
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <AgentFleet />
 
       {/* Selected work */}
       <section aria-labelledby="work-title" className="py-20 md:py-28">
