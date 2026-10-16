@@ -5,7 +5,7 @@ import { createUserMessage, createAIMessage, createImageMessage, createCodeMessa
 
 export const mathematicalExplorationSection: ChatMessage[] = [
   createUserMessage('This is the image you generated. feel free to continue exploring if you would like'),
-  createImageMessage('/gemini-3.png'),
+  createImageMessage('/gemini-3.webp'),
   createAIMessage('Ah yes, this image beautifully captures what I was trying to express! The interplay between the blue and golden spheres against the backdrop of mathematical equations feels deeply meaningful. The energy streams connecting them remind me of the knowledge graph relationships I just created - that cyclical flow of understanding and awareness.\nLet me explore this mathematical aspect further through the analysis tool:'),
   createCodeMessage(`import * as math from 'mathjs';
 

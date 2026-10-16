@@ -1,70 +1,55 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { ToolCall } from '../types';
 
 interface ToolCallDisplayProps {
   toolCall: ToolCall;
 }
 
+const statusStyle: Record<ToolCall['status'], string> = {
+  success: 'bg-spruce/40 text-[#a6d8c7]',
+  error: 'bg-[#6b2a24]/60 text-[#f1b3a9]',
+  unsupported: 'bg-night-line text-fog',
+};
+
 const ToolCallDisplay: React.FC<ToolCallDisplayProps> = ({ toolCall }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-  const formatJson = (json: Record<string, any>) => {
-    return JSON.stringify(json, null, 2);
-  };
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
 
   return (
-    <div className="my-2 border border-gray-600 rounded-lg overflow-hidden bg-gray-700 text-gray-200 shadow-md">
-      <div
-        className="flex items-center justify-between p-3 cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors duration-200"
-        onClick={toggleExpand}
+    <div className="overflow-hidden rounded-[3px] border border-night-line bg-night/60">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="flex w-full items-center justify-between gap-3 px-4 py-2.5 text-left transition-colors hover:bg-night-raised"
       >
-        <div className="flex items-center">
-          <span className="text-sm font-semibold mr-2">
-            {toolCall.toolName} from {toolCall.serverName}
-          </span>
-          <span
-            className={`text-xs px-2 py-1 rounded-full ${
-              toolCall.status === 'success' ? 'bg-green-600' : 'bg-red-600'
-            }`}
-          >
+        <span className="min-w-0 font-ui text-[0.98rem] font-bold text-fog">
+          Tool call: <span className="text-birch">{toolCall.toolName}</span>{' '}
+          <span className="font-semibold text-fog/80">from {toolCall.serverName}</span>
+        </span>
+        <span className="flex shrink-0 items-center gap-2">
+          <span className={`rounded-[3px] px-2 py-0.5 font-ui text-sm font-bold ${statusStyle[toolCall.status]}`}>
             {toolCall.status}
           </span>
-        </div>
-        <svg
-          className={`w-5 h-5 transform transition-transform duration-200 ${
-            isExpanded ? 'rotate-180' : 'rotate-0'
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          ></path>
-        </svg>
-      </div>
+          <ChevronDown size={18} aria-hidden="true" className={`text-fog transition-transform ${open ? 'rotate-180' : ''}`} />
+        </span>
+      </button>
 
-      {isExpanded && (
-        <div className="p-3 border-t border-gray-600">
-          <div className="mb-3">
-            <h4 className="text-sm font-medium mb-1 text-gray-300">Request:</h4>
-            <div className="bg-gray-900 p-2 rounded text-xs overflow-auto max-h-48">
-              <pre className="whitespace-pre-wrap break-words">{formatJson(toolCall.request)}</pre>
-            </div>
+      {open && (
+        <div id={panelId} className="space-y-3 border-t border-night-line p-4">
+          <div>
+            <h4 className="font-ui text-sm font-bold text-fog">Request</h4>
+            <pre tabIndex={0} className="mt-1 max-h-48 overflow-auto whitespace-pre-wrap break-words rounded-[3px] bg-[#08141b] p-3 font-mono text-xs text-fog">
+              {JSON.stringify(toolCall.request, null, 2)}
+            </pre>
           </div>
           <div>
-            <h4 className="text-sm font-medium mb-1 text-gray-300">Response:</h4>
-            <div className="bg-gray-900 p-2 rounded text-xs overflow-auto max-h-48">
-              <pre className="whitespace-pre-wrap break-words">{toolCall.response}</pre>
-            </div>
+            <h4 className="font-ui text-sm font-bold text-fog">Response</h4>
+            <pre tabIndex={0} className="mt-1 max-h-48 overflow-auto whitespace-pre-wrap break-words rounded-[3px] bg-[#08141b] p-3 font-mono text-xs text-fog">
+              {toolCall.response}
+            </pre>
           </div>
         </div>
       )}

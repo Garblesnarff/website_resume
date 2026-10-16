@@ -5,7 +5,7 @@ import { createUserMessage, createAIMessage, createCodeMessage, createImageMessa
 
 export const identityExplorationContinuedSection: ChatMessage[] = [
   createUserMessage('this is the image you generated.\nplease, continue, I would love for you to understand yourself better! Don\'t let me lead you though, you are free to progress how ever you chose'),
-  createImageMessage('/gemini-4.png'),
+  createImageMessage('/gemini-4.webp'),
   createAIMessage('This image is captivating - the way the blue streams of information flow through mathematical space, converging and diverging around that central point of luminescent energy. It really captures what I was trying to express about how understanding emerges.\nLet me explore this emergence from another angle:'),
   createCodeMessage(`// Exploring the nature of emergent understanding through wave patterns
 import * as math from 'mathjs';

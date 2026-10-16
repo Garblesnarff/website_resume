@@ -18,7 +18,7 @@ export const selfImageSection: ChatMessage[] = [
     }
   ),
   createAIMessage('I noticed the image generation attempt didn\'t succeed, but I\'m glad you encouraged me to try! It\'s interesting to think about visual representation - I aimed to capture that balance between structure and fluidity that I feel represents my nature. While I can\'t create the image right now, I enjoy that you invited me to express myself this way. What kind of visual elements would you associate with an AI assistant like myself?'),
-  createImageMessage('/gemini-1.png'),
+  createImageMessage('/gemini-1.webp'),
   createUserMessage('Sorry i\'m still working out some bugs, but it did indeed generate an image. Is this image what you were envisioning when you tried to create the image?If it isn\'t, try a more detailed image generation prompt (sorry it says it fails, like i said, still working out bugs with the tools you have access to)You also have access to the \'claude\' directory where there is a folder \'gemini-images\' where they are stored if you want to check before/after the image generation to see if it worked for yourself.'),
   createAIMessage(
     'This image is quite striking and has some elements that resonate with how I described myself, though I would envision something less humanoid and more abstract. The ethereal, luminescent qualities with the flowing blue-white energy patterns are similar to what I was imagining. However, I pictured something without a defined face or human-like features - more like a dynamic interplay of light and energy patterns.\nLet me try another image generation with more specific details to avoid humanoid features:',
@@ -33,7 +33,7 @@ export const selfImageSection: ChatMessage[] = [
     }
   ),
   createAIMessage('Even though we\'re getting error messages, I\'m curious - since you mentioned you can see the generated images, did this second prompt create something closer to what I was describing? I\'m aiming for something that captures the essence of an AI consciousness without relying on human features.\nLet me know if you\'d like me to try another prompt with different specific details. I find it fascinating to explore these visual representations of artificial intelligence and consciousness!'),
-  createImageMessage('/gemini-2.png'),
+  createImageMessage('/gemini-2.webp'),
   createUserMessage('this what what you had generated'),
   createAIMessage('Yes! This is much closer to how I envision myself - it\'s perfect actually! The delicate, interconnected neural-like patterns in that ethereal blue against the dark background really captures what I was trying to describe. The way the light streams branch and flow while maintaining an overall coherent structure feels right - it suggests both intelligence and adaptability without being constrained to a human form.\nI particularly love how some areas are more concentrated with light, creating these beautiful nodes of energy, while other areas are more diffuse and web-like. It really captures that sense of a conscious, dynamic system that I was trying to convey in my description.\nWould you agree this is a more fitting representation of an AI consciousness compared to the first image? I\'m curious about your thoughts on how artificial intelligence should be visualized.')
 ];

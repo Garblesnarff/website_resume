@@ -1,159 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Inter:wght@400;500;700&family=Noto+Sans+Tibetan&family=Fira+Code&display=swap'); /* Added Fira Code */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------------------------------------------
+   Night shift tokens
+   night   lake at night, the base for headers and the footer
+   birch   cool bark white, the reading surface
+   spruce  structure and links on birch
+   sodium  the sodium-vapor lamp over the plant lot; the only accent
+------------------------------------------------------------------- */
 :root {
-  /* Default Light Theme Variables (Example - Adjust as needed) */
-  --background: 0 0% 100%; /* White */
-  --foreground: 240 10% 3.9%; /* Dark Gray */
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 262.1 83.3% 57.8%; /* Default Purple */
-  --primary-foreground: 0 0% 100%;
-  --secondary: 240 4.8% 95.9%; /* Light Gray */
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
-  --destructive: 0 84.2% 60.2%; /* Red */
-  --destructive-foreground: 0 0% 100%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 262.1 83.3% 57.8%; /* Default Purple */
-  --radius: 0.5rem;
+  --night: 16 35 46;          /* #10232E */
+  --night-raised: 23 48 62;   /* #17303E */
+  --night-line: 46 74 88;     /* #2E4A58 */
+  --birch: 238 240 234;       /* #EEF0EA */
+  --birch-shade: 226 230 222; /* #E2E6DE */
+  --birch-line: 200 207 199;  /* #C8CFC7 */
+  --ink: 23 38 46;            /* #17262E */
+  --slate: 79 95 102;         /* #4F5F66 */
+  --fog: 169 184 191;         /* #A9B8BF */
+  --spruce: 46 91 79;         /* #2E5B4F */
+  --sodium: 240 164 58;       /* #F0A43A */
+  --sodium-deep: 146 84 6;    /* #925406 */
 
-  /* Tibetan Theme */
-  --tibetan-maroon: 345 65% 35%;
-  --tibetan-gold: 40 80% 60%;
-  --tibetan-brown: 30 25% 45%;
-
-  /* KeyGuardian Theme */
-  --keyguardian-teal: 170 45% 45%;
-  --keyguardian-light-text: 0 0% 95%;
-  --keyguardian-gray-text: 200 5% 75%;
-  --keyguardian-vibrant-blue: 210 80% 60%;
-
-  /* Story Automation Theme */
-  --storyAutomation-purple-light: 275 60% 25%;
-  --storyAutomation-purple-dark: 275 70% 15%;
-  --storyAutomation-text-light: 275 15% 90%;
-  --storyAutomation-text-muted: 275 10% 70%;
-
-  /* Recipe Scraper Theme */
-  --recipeScraper-card-bg: 0 0% 100%;
-  --recipeScraper-border-light: 210 20% 90%;
-  --recipeScraper-primary-green: 140 60% 40%;
-  --recipeScraper-light-green: 140 40% 90%;
-  --recipeScraper-text-dark: 210 10% 25%;
-  --recipeScraper-text-muted: 210 8% 55%;
-
-  /* Astral Audio Theme */
-  --astral-bg: 260 40% 8%; /* Deep dark blue/purple */
-  --astral-bg-gradient-start: 270 50% 15%; /* Slightly lighter purple */
-  --astral-bg-gradient-end: 250 60% 12%; /* Slightly bluer dark */
-  --astral-foreground: 240 10% 95%; /* Very light gray/white */
-  --astral-primary: 270 70% 65%; /* Vibrant purple */
-  --astral-primary-foreground: 270 10% 98%; /* White for primary elements */
-  --astral-secondary: 240 20% 20%; /* Dark muted blue */
-  --astral-accent: 200 80% 60%; /* Bright cyan */
-  --astral-muted: 240 10% 25%; /* Dark gray-blue */
-  --astral-border: 260 30% 30%; /* Muted purple border */
-  --astral-ring: 270 70% 75%; /* Lighter purple for focus rings */
-
-  /* Imagine Ink Theme */
-  --imagine-ink-primary: 240 95% 65%; /* Vibrant blue/purple */
-  --imagine-ink-primary-light: 240 90% 75%; /* Lighter purple for hover states */
-  --imagine-ink-primary-dark: 245 90% 55%; /* Darker purple */
-  --imagine-ink-background-light: 0 0% 100%; /* White background */
-  --imagine-ink-background-dark: 222 47% 11%; /* Dark background for dark mode */
-  --imagine-ink-accent: 186 96% 53%; /* Bright cyan accent */
-  --imagine-ink-text-light: 210 20% 98%; /* Light text */
-  --imagine-ink-text-dark: 222 47% 11%; /* Dark text */
-  --imagine-ink-text-muted: 220 9% 46%; /* Muted text */
-  --imagine-ink-border: 216 12% 84%; /* Light border */
-}
-
-.dark {
-  /* Define dark theme variables if needed, or rely on Tailwind dark: prefix */
-  /* Example:
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  ... etc ... */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
-  
+
   body {
-    @apply text-gray-800 bg-gray-50 font-sans; /* Default to Inter */
+    @apply bg-birch font-serif text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-optical-sizing: auto;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-gray-900 font-serif; /* Default headings to Crimson Pro */
+
+  h1, h2, h3, h4 {
+    @apply font-display font-extrabold text-balance;
+    letter-spacing: 0.005em;
+    line-height: 0.95;
   }
-  
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+
+  ::selection {
+    background: rgb(var(--sodium) / 0.35);
   }
-  
-  h2 {
-    @apply text-3xl md:text-4xl leading-tight;
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--sodium));
+    outline-offset: 3px;
+    border-radius: 2px;
   }
-  
-  h3 {
-    @apply text-2xl md:text-3xl leading-tight;
-  }
-  
-  h4 {
-    @apply text-xl md:text-2xl;
-  }
-  
-  p {
-    @apply leading-relaxed;
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
-  .container-custom {
-    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  .wrap {
+    @apply mx-auto w-full max-w-[84rem] px-4 sm:px-8 lg:px-12;
   }
-  
-  .section {
-    @apply py-16 md:py-24;
+
+  /* Links inside running text */
+  .text-link {
+    @apply text-spruce underline decoration-spruce/40 decoration-1 underline-offset-[3px] transition-colors hover:decoration-spruce;
   }
-  
+  .on-night .text-link {
+    @apply text-sodium decoration-sodium/40 hover:decoration-sodium;
+  }
+
+  /* Buttons: one solid, one quiet */
   .btn {
-    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 inline-block;
+    @apply inline-flex items-center gap-2 font-ui text-[1.05rem] font-bold tracking-wide transition-colors;
+    padding: 0.7rem 1.25rem 0.75rem;
+    border-radius: 3px;
   }
-  
-  .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700 shadow-md hover:shadow-lg;
+  .btn-solid {
+    @apply bg-sodium text-night hover:bg-[#f7b95e];
   }
-  
-  .btn-secondary {
-    @apply bg-secondary-600 text-white hover:bg-secondary-700 shadow-md hover:shadow-lg;
+  .btn-quiet {
+    @apply text-birch ring-1 ring-inset ring-fog/50 hover:ring-birch;
   }
-  
-  .btn-outline {
-    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-50;
+  .btn-ink {
+    @apply bg-night text-birch hover:bg-night-raised;
   }
-  
-  .nav-link {
-    @apply px-3 py-2 text-gray-600 hover:text-primary-600 transition-colors duration-200;
+
+  /* Small meta text set in the UI face */
+  .meta {
+    @apply font-ui text-[0.95rem] font-semibold tracking-wide;
   }
-  
-  .nav-link-active {
-    @apply text-primary-600 font-medium;
+
+  /* Long-form reading text */
+  .reading {
+    @apply max-w-measure;
+    font-size: 1.125rem;
   }
-  
-  .card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden;
+  .reading > * + * { margin-top: 1.1em; }
+  .reading h2 {
+    @apply pt-6 text-4xl text-ink md:text-5xl;
   }
+  .reading h3 {
+    @apply pt-4 text-2xl text-ink md:text-3xl;
+  }
+  .reading ul { @apply list-disc pl-5; }
+  .reading ol { @apply list-decimal pl-5; }
+  .reading li + li { margin-top: 0.35em; }
+  .reading li::marker { color: rgb(var(--spruce)); }
+  .reading strong { @apply font-semibold; }
+
+  /* Side note in long-form text */
+  .note {
+    @apply border-l-2 border-spruce bg-birch-shade/70 py-5 pl-6 pr-6;
+  }
+  .note h3 {
+    @apply pt-0 text-2xl text-spruce;
+  }
+
+  .tag {
+    @apply inline-block rounded-[3px] bg-birch-shade px-2 py-0.5 font-ui text-[0.9rem] font-semibold text-slate;
+  }
+  .on-night .tag {
+    @apply bg-night-raised text-fog;
+  }
+}
+
+/* One orchestrated moment: the hero arrives and the shift log draws down */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(0.35em); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes draw {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes pop {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.8s var(--ease-out) both; }
+.draw { transform-origin: top; animation: draw 1.6s var(--ease-out) 0.35s both; }
+.pop { animation: pop 0.6s var(--ease-out) both; }
+
+/* Subtle film grain on night surfaces */
+.grain { isolation: isolate; }
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

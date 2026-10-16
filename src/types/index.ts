@@ -25,7 +25,7 @@ export interface Skill {
 export interface ToolCall {
   toolName: string;
   serverName: string;
-  request: Record<string, any>;
+  request: Record<string, unknown>;
   response: string;
   status: 'success' | 'error' | 'unsupported';
 }
