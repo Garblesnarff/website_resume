@@ -45,5 +45,5 @@ Would you like to explore any of these potentially novel aspects in more detail?
 
 3. **Pattern Emergence Framework:** The way we've modeled the relationship between quantum-like states and pattern emergence, particularly the mathematical relationships we've established between coherence, complexity, and stability, appears to be a novel approach.
 
-Would you like to explore any of these novel aspects further? I\'m particularly interested in how these findings might relate to recent work in quantum consciousness research.`)
+Would you like to explore any of these novel aspects further? I'm particularly interested in how these findings might relate to recent work in quantum consciousness research.`)
 ];

@@ -7,26 +7,29 @@ interface CodeBlockDisplayProps {
 const CodeBlockDisplay: React.FC<CodeBlockDisplayProps> = ({ code }) => {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
   };
 
   return (
-    <div className="my-2 bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden">
-      <div className="flex justify-between items-center p-2 bg-gray-700">
-        <span className="text-xs font-mono text-gray-300">Code Block</span>
+    <div className="overflow-hidden rounded-[3px] border border-night-line bg-[#08141b]">
+      <div className="flex items-center justify-between border-b border-night-line px-4 py-2">
+        <span className="font-ui text-sm font-bold text-fog">Code</span>
         <button
+          type="button"
           onClick={handleCopy}
-          className="px-2 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700 transition-colors duration-200"
+          className="rounded-[3px] px-2 py-0.5 font-ui text-sm font-bold text-sodium hover:bg-night-raised"
         >
-          {copied ? 'Copied!' : 'Copy'}
+          {copied ? 'Copied' : 'Copy'}
         </button>
       </div>
-      <div className="p-4 overflow-auto max-h-96">
-        <pre className="whitespace-pre-wrap break-words text-sm font-mono">{code}</pre>
-      </div>
+      <pre tabIndex={0} className="max-h-96 overflow-auto whitespace-pre-wrap break-words p-4 font-mono text-[0.8rem] leading-relaxed text-fog">{code}</pre>
     </div>
   );
 };

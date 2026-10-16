@@ -1,180 +1,134 @@
 import { useState } from 'react';
-import { Send, Mail, MessageSquare } from 'lucide-react';
-// Removed direct import of public asset
+import { Check, Copy, Github, Linkedin, Youtube } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
+import XLogo from '../components/icons/XLogo';
+import { CONTACT } from '../config';
+
+const field =
+  'mt-2 w-full rounded-[3px] border border-birch-line bg-white/70 px-4 py-3 text-ink outline-none transition-colors placeholder:text-slate/60 focus:border-spruce focus:ring-2 focus:ring-spruce/25';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [form, setForm] = useState({ name: '', subject: '', message: '' });
+  const [opened, setOpened] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const body = `${form.message}\n\n${form.name}`;
+    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    setOpened(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      // Reset success message after a delay
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(CONTACT.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
   };
 
   return (
     <>
-      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white relative overflow-hidden">
-        <div 
-          className="absolute inset-0 z-0 opacity-80" 
-          style={{
-            backgroundImage: `url('/rob-hanson-portfolio/backgrounds/contact-header.png')`, // Use base path for public assets
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        ></div>
-        <div className="container-custom relative z-10">
-          <h1 className="mb-6 text-primary-300 text-center font-serif">Contact Me</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
-            Interested in discussing AI alignment, behavior analysis, or potential collaboration? I'd love to hear from you.
-          </p>
-        </div>
-      </section>
-      
-      <section className="section bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-5 gap-12">
-              <div className="md:col-span-2 order-2 md:order-1">
-                <div className="bg-gray-50 p-8 rounded-xl h-full">
-                  <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary-100 p-2 rounded-full mt-1">
-                        <Mail className="w-5 h-5 text-primary-600" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg">Email</h3>
-                        <p className="text-gray-600">ro.jhanson@gmail.com</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary-100 p-2 rounded-full mt-1">
-                        <MessageSquare className="w-5 h-5 text-primary-600" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg">Additional Info</h3>
-                        <p className="text-gray-600">Please allow 1-2 business days for a response. I'm most interested in discussions related to AI safety, alignment research, and potential collaboration opportunities.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <PageHeader
+        title="Contact me"
+        intro="Interested in discussing AI alignment, behavior analysis, or potential collaboration? I'd love to hear from you."
+      />
+
+      <section className="py-16 md:py-24">
+        <div className="wrap grid gap-16 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <h2 className="text-5xl text-ink">Email</h2>
+            <a
+              href={`mailto:${CONTACT.email}`}
+              className="mt-5 block break-all font-display text-[clamp(1.9rem,4vw,2.75rem)] font-bold leading-tight text-spruce underline decoration-spruce/30 underline-offset-[6px] hover:decoration-spruce"
+            >
+              {CONTACT.email}
+            </a>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="mt-4 inline-flex items-center gap-2 font-ui text-lg font-bold text-slate hover:text-ink"
+            >
+              {copied ? <Check size={18} aria-hidden="true" /> : <Copy size={18} aria-hidden="true" />}
+              {copied ? 'Copied' : 'Copy address'}
+            </button>
+            <span className="sr-only" aria-live="polite">
+              {copied ? 'Email address copied' : ''}
+            </span>
+
+            <p className="mt-10 max-w-sm text-slate">
+              Please allow 1-2 business days for a response. I&rsquo;m most interested in discussions related to AI
+              safety, alignment research, and potential collaboration opportunities.
+            </p>
+
+            <h2 className="mt-14 text-4xl text-ink">Elsewhere</h2>
+            <ul className="mt-4 divide-y divide-birch-line border-y border-birch-line">
+              {[
+                { href: CONTACT.github, label: 'GitHub', handle: 'Garblesnarff', icon: <Github size={20} aria-hidden="true" /> },
+                { href: CONTACT.linkedin, label: 'LinkedIn', handle: 'rob-hanson-ai', icon: <Linkedin size={20} aria-hidden="true" /> },
+                { href: CONTACT.x, label: 'X', handle: '@PrintedPathways', icon: <XLogo size={18} /> },
+                { href: CONTACT.youtube, label: 'YouTube', handle: '@Sinister_Serials', icon: <Youtube size={20} aria-hidden="true" /> },
+              ].map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 py-3.5 text-ink hover:text-spruce">
+                    {s.icon}
+                    <span className="font-ui text-lg font-bold">{s.label}</span>
+                    <span className="ml-auto text-slate">{s.handle}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-7">
+            <form onSubmit={onSubmit} className="rounded-[4px] bg-birch-shade p-6 sm:p-10">
+              <h2 className="text-5xl text-ink">Write a message</h2>
+              <p className="mt-3 text-slate">This opens the message in your email app, ready to send.</p>
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                <label className="block font-ui text-lg font-bold text-ink">
+                  Your name
+                  <input name="name" value={form.name} onChange={onChange} required autoComplete="name" className={`${field} font-serif text-base font-normal`} />
+                </label>
+                <label className="block font-ui text-lg font-bold text-ink">
+                  Subject
+                  <input name="subject" value={form.subject} onChange={onChange} required className={`${field} font-serif text-base font-normal`} />
+                </label>
               </div>
-              
-              <div className="md:col-span-3 order-1 md:order-2">
-                <form onSubmit={handleSubmit} className="card p-8">
-                  <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
-                  
-                  <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
-                        required
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
-                        required
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="subject" className="block text-gray-700 mb-2">Subject</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
-                      required
-                    />
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={6}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors resize-none"
-                      required
-                    ></textarea>
-                  </div>
-                  
-                  <div>
-                    <button
-                      type="submit"
-                      className="btn btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <>Processing...</>
-                      ) : (
-                        <>
-                          Send Message <Send size={18} />
-                        </>
-                      )}
-                    </button>
-                    
-                    {submitSuccess && (
-                      <p className="text-green-600 mt-4 animate-fadeIn">
-                        Your message has been sent successfully! I'll be in touch soon.
-                      </p>
-                    )}
-                  </div>
-                </form>
+              <label className="mt-6 block font-ui text-lg font-bold text-ink">
+                Message
+                <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={onChange}
+                  required
+                  rows={7}
+                  className={`${field} resize-y font-serif text-base font-normal`}
+                />
+              </label>
+
+              <div className="mt-8 flex flex-wrap items-center gap-5">
+                <button type="submit" className="btn btn-ink">
+                  Open in email app
+                </button>
+                <p aria-live="polite" className="text-[0.95rem] text-slate">
+                  {opened && (
+                    <>
+                      No email app opened? Send it to{' '}
+                      <a href={`mailto:${CONTACT.email}`} className="text-link">
+                        {CONTACT.email}
+                      </a>
+                      .
+                    </>
+                  )}
+                </p>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>

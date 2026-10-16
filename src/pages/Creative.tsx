@@ -1,85 +1,91 @@
+import { Youtube } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
+import { BASE_PATH, CONTACT } from '../config';
 
-import { Youtube, Film, Mic } from 'lucide-react';
-import { BASE_PATH } from '../config';
+const steps = [
+  {
+    title: 'Concept and storyboarding',
+    text: "I developed the core concept of a sentient, predatory garden and storyboarded the key moments of the blood activation scene to guide the AI's visual output.",
+  },
+  {
+    title: 'AI-powered visuals',
+    text: 'I directed an image generation AI to create a series of still images, iterating on the prompts to achieve a consistent and unsettling visual style.',
+  },
+  {
+    title: 'Sound design and narration',
+    text: 'I used AI to generate sound effects, ambient music, and whispered narration, then mixed them together to create a rich and immersive audio experience.',
+  },
+];
 
 const Creative = () => {
   return (
     <>
-      <section
-        className="bg-gradient-to-r from-red-900 to-gray-900 py-20 text-white"
-        style={{
-          backgroundImage: `url('${BASE_PATH}backgrounds/creative-background.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="container-custom">
-          <h1 className="mb-6 text-red-300 text-center font-serif">AI Storyteller & Filmmaker</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
-            I use AI as a creative partner to write, illustrate, and narrate compelling stories. Explore my work in AI-powered filmmaking and storytelling.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="AI storyteller and filmmaker"
+        intro="I use AI as a creative partner to write, illustrate, and narrate compelling stories. Explore my work in AI-powered filmmaking and storytelling."
+      />
 
-      <section id="sinister-serials" className="section bg-gray-900 text-white">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center"><Youtube className="mr-3" /> Sinister Serials</h2>
-              <p className="text-lg text-gray-400 mb-6">
-                My YouTube channel is a collection of short, unsettling stories written, illustrated, and narrated with the help of AI. Each video is an experiment in AI-powered creativity, from concept to final cut.
-              </p>
-              <a
-                href="https://www.youtube.com/@Sinister_Serials"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-danger"
-              >
-                Visit the Channel
-              </a>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
-                <iframe
-                  src="https://www.youtube.com/embed/videoseries?list=UU-Rke9b_M7_9iR3-a_s3y9A"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="bone-garden" className="section bg-gray-800 text-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center justify-center"><Film className="mr-3" /> The Bone Garden: A Case Study</h2>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              A deep dive into the creation of a pivotal scene from a larger horror concept, showcasing my process for directing AI in multimedia production.
+      <section id="sinister-serials" aria-labelledby="serials-title" className="py-16 md:py-24">
+        <div className="wrap grid items-start gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <h2 id="serials-title" className="text-6xl text-ink md:text-7xl">
+              Sinister Serials
+            </h2>
+            <p className="mt-6 max-w-measure text-lg">
+              My YouTube channel is a collection of short, unsettling stories written, illustrated, and narrated with the
+              help of AI. Each video is an experiment in AI-powered creativity, from concept to final cut.
             </p>
+            <a href={CONTACT.youtube} target="_blank" rel="noopener noreferrer" className="btn btn-ink mt-8">
+              <Youtube size={18} aria-hidden="true" /> Visit the channel
+            </a>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-2 text-red-500">Concept & Storyboarding</h3>
-              <p className="text-gray-400">I developed the core concept of a sentient, predatory garden and storyboarded the key moments of the blood activation scene to guide the AI's visual output.</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-2 text-red-500">AI-Powered Visuals</h3>
-              <p className="text-gray-400">I directed an image generation AI to create a series of still images, iterating on the prompts to achieve a consistent and unsettling visual style.</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-2 text-red-500">Sound Design & Narration</h3>
-              <p className="text-gray-400">I used AI to generate sound effects, ambient music, and whispered narration, then mixed them together to create a rich and immersive audio experience.</p>
+          <div className="lg:col-span-7">
+            <div className="aspect-video overflow-hidden rounded-[4px] bg-night">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/videoseries?list=UU5gmVtEiFVL83qAih4QCoBw"
+                title="Sinister Serials, latest uploads"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="h-full w-full border-0"
+              />
             </div>
           </div>
-          <div className="text-center mt-12">
-            <Link to="/projects" className="btn btn-outline-danger">
-              View the Production Report
-            </Link>
+        </div>
+      </section>
+
+      <section id="bone-garden" aria-labelledby="bone-title" className="relative on-night grain bg-night text-birch">
+        <div className="grid lg:grid-cols-2">
+          <img
+            src={`${BASE_PATH}showcase/bone-garden.webp`}
+            alt="Pale bone-like growths rising from dark, blood-stained soil"
+            className="h-72 w-full object-cover md:h-[28rem] lg:h-full"
+            loading="lazy"
+            width={1024}
+            height={636}
+          />
+          <div className="px-4 py-16 sm:px-8 md:py-24 lg:px-14">
+            <p className="meta text-fog">Case study</p>
+            <h2 id="bone-title" className="mt-4 text-[clamp(3rem,6vw,5rem)] uppercase leading-[0.86] text-birch">
+              The Bone Garden
+            </h2>
+            <p className="mt-6 max-w-lg text-lg text-fog">
+              A deep dive into the creation of a pivotal scene from a larger horror concept, showcasing my process for
+              directing AI in multimedia production.
+            </p>
+            <ol className="mt-12 space-y-8">
+              {steps.map((s, i) => (
+                <li key={s.title} className="grid grid-cols-[2.5rem_1fr] gap-4">
+                  <span aria-hidden="true" className="font-display text-4xl font-extrabold leading-none text-sodium">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-3xl text-birch">{s.title}</h3>
+                    <p className="mt-2 max-w-md text-fog">{s.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>

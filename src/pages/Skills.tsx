@@ -1,104 +1,79 @@
-import SkillItem from '../components/SkillItem';
+import { Link } from 'react-router-dom';
+import PageHeader from '../components/PageHeader';
 import { getSkillsByCategory } from '../data/skills';
-import { Brain, Code, Search, Heart } from 'lucide-react';
-import { Link } from 'react-router-dom'; // Import Link
-// Removed direct import of public asset
+import { Skill } from '../types';
 
-const Skills = () => {
-  const { core, technical, analysis, soft } = getSkillsByCategory();
+const groups: { key: keyof ReturnType<typeof getSkillsByCategory>; title: string; description: string }[] = [
+  {
+    key: 'core',
+    title: 'Core AI orchestration',
+    description: 'Fundamental capabilities for directing and controlling AI development processes.',
+  },
+  {
+    key: 'technical',
+    title: 'Technical',
+    description: 'Practical capabilities for implementing AI-assisted development.',
+  },
+  {
+    key: 'analysis',
+    title: 'Analysis and observation',
+    description: 'Capabilities for evaluating and understanding AI behavior patterns.',
+  },
+  {
+    key: 'soft',
+    title: 'Soft skills and values',
+    description: 'Ethical foundations and learning approaches that inform my work.',
+  },
+];
 
-  const CategoryHeader = ({ 
-    title, 
-    description, 
-    icon 
-  }: { 
-    title: string; 
-    description: string; 
-    icon: JSX.Element 
-  }) => (
-    <div className="mb-8">
-      <div className="flex items-center gap-3 mb-3">
-        <div className="bg-primary-100 p-2 rounded-full">
-          {icon}
-        </div>
-        <h2 className="text-2xl font-bold">{title}</h2>
-      </div>
-      <p className="text-gray-600 max-w-3xl">{description}</p>
+const SkillEntry = ({ skill }: { skill: Skill }) => {
+  const isLearning = skill.id === 'learning';
+  return (
+    <div className="border-t border-birch-line py-6">
+      <dt className="font-display text-[1.75rem] font-bold leading-tight text-ink">{skill.name}</dt>
+      <dd className="mt-2 max-w-measure text-slate">
+        {skill.description}
+        {isLearning && (
+          <>
+            {' '}
+            <Link to="/learning-resources" className="text-link">
+              See what I listen to
+            </Link>
+            .
+          </>
+        )}
+      </dd>
     </div>
   );
+};
+
+const Skills = () => {
+  const byCategory = getSkillsByCategory();
 
   return (
     <>
-      <section 
-      className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white"
-      style={{
-        backgroundImage: `url('/rob-hanson-portfolio/backgrounds/skills-background.png')`, // Use base path for public assets
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
-        <div className="container-custom">
-          <h1 className="mb-6 text-primary-300 text-center font-serif">My AI Skills</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto text-gray-300">
-            These capabilities represent expertise developed through thousands of hours of hands-on AI orchestration and directed development.
-          </p>
-        </div>
-      </section>
-      
-      <section className="section bg-white">
-        <div className="container-custom">
-          <CategoryHeader 
-            title="Core AI Orchestration Skills" 
-            description="Fundamental capabilities for directing and controlling AI development processes."
-            icon={<Brain className="w-6 h-6 text-primary-600" />}
-          />
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {core.map((skill) => (
-              <SkillItem key={skill.id} skill={skill} />
-            ))}
-          </div>
-          
-          <CategoryHeader 
-            title="Technical Skills" 
-            description="Practical capabilities for implementing AI-assisted development."
-            icon={<Code className="w-6 h-6 text-primary-600" />}
-          />
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {technical.map((skill) => (
-              <SkillItem key={skill.id} skill={skill} />
-            ))}
-          </div>
-          
-          <CategoryHeader 
-            title="Analysis & Observation Skills" 
-            description="Capabilities for evaluating and understanding AI behavior patterns."
-            icon={<Search className="w-6 h-6 text-primary-600" />}
-          />
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {analysis.map((skill) => (
-              <SkillItem key={skill.id} skill={skill} />
-            ))}
-          </div>
-          
-          <CategoryHeader 
-            title="Soft Skills & Values" 
-            description="Ethical foundations and learning approaches that inform my work."
-            icon={<Heart className="w-6 h-6 text-primary-600" />}
-          />
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {soft.map((skill) => (
-              skill.id === 'learning' ? (
-                <Link key={skill.id} to="/learning-resources" className="block h-full"> {/* Link for specific skill */}
-                  <SkillItem skill={skill} />
-                </Link>
-              ) : (
-                <SkillItem key={skill.id} skill={skill} /> // Regular item for other skills
-              )
-            ))}
-          </div>
+      <PageHeader
+        title="My AI skills"
+        intro="These capabilities represent expertise developed through thousands of hours of hands-on AI orchestration and directed development."
+      />
+
+      <section className="py-16 md:py-24">
+        <div className="wrap space-y-20">
+          {groups.map((g) => (
+            <div key={g.key} className="grid gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <div className="lg:sticky lg:top-24">
+                  <h2 className="text-5xl text-ink md:text-6xl">{g.title}</h2>
+                  <p className="mt-4 max-w-sm text-slate">{g.description}</p>
+                </div>
+              </div>
+              <dl className="border-b border-birch-line lg:col-span-8">
+                {byCategory[g.key].map((s) => (
+                  <SkillEntry key={s.id} skill={s} />
+                ))}
+              </dl>
+            </div>
+          ))}
         </div>
       </section>
     </>
